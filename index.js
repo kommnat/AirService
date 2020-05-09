@@ -15,3 +15,5 @@ app.post('/kreangsak',async (req, res) => {
     res.header("Expires", 0);
     res.sendStatus(200)
     });
+
+app.listen(port)
