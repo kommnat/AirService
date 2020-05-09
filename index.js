@@ -47,7 +47,7 @@ app.post('/kreangsak',async (req, res) => {
             }else if((event.postback.data).substring(0, 19) == "select_type_success"){
                 let band_air = (event.postback.data).substring(19, (event.postback.data).length);
                 console.log('band_air: ',band_air)
-                input_generation(band_air,reply_token,userId,myCache)
+                //input_generation(band_air,reply_token,userId,myCache)
                 //requestStaff(type_service,reply_token,userId,myCache)
             }
         }
