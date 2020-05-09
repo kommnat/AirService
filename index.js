@@ -54,8 +54,8 @@ app.post('/kreangsak',async (req, res) => {
                     let msg = (event.message.text).trim();
                     input_name(msg,reply_token,userId,myCache)
                 }
-            }else if(event.type == 'location' ){
-                console.log('---------location-------')
+            }else if(event.message.type == 'location' ){
+                //console.log('---------location-------')
                 if(myCache.get("type_service"+userId) != null && myCache.get("select_band"+userId) != null && myCache.get("generation"+userId) != null && myCache.get("select_btu"+userId) != null && myCache.get("discription"+userId) != null && myCache.get("name_customer"+userId) != null ){
                     let address = (event.message.address);
                     let lat_lon = event.message.latitude+','+event.message.longitude
