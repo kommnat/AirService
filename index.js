@@ -30,7 +30,7 @@ app.post('/kreangsak',async (req, res) => {
         let reply_token = req.body.events[0].replyToken
         let event = req.body.events[0]
         let userId = req.body.events[0].source.userId 
-        //console.log(event)
+        console.log(event)
         if(event.type == 'message'){
             if(event.message.type ==  'text'){
               //console.log("msg :",event.message.text)
