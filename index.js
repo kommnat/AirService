@@ -6,6 +6,8 @@ const app = express()
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
+const c_greet = require('./command/greet')
+
 app.get('/kreangsak', (req, res) => {
     res.send('Hello GET')
     });
@@ -38,25 +40,6 @@ app.post('/kreangsak',async (req, res) => {
 
 app.listen(port)
 
-function hello(msg, reply_token ,) {
-    
-    let headers = {
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer nhA7Nnh79w2MKRuSJJig6x49gtc+Fgng19j/ACEisjRHdClkRNTWpIRock09/MGwPOqz1ZEKDoUXwmxPRnjOXGtKEmcneqOBpuFXcv0BQTYGEG0G2ECjqEmKa3jRjHgUc1Hv2Exw4tMMeF48YdEbDwdB04t89/1O/w1cDnyilFU='
-    }  
-    let body = JSON.stringify({
-        replyToken: reply_token,
-        messages: [{
-            'type': 'text',
-            'text': msg
-        },
-    ]
-    })
-    request.post({
-        url: 'https://api.line.me/v2/bot/message/reply',
-        headers: headers,
-        body: body
-    }, (err, res, body) => {
-        //console.log('status = ' + res.statusCode);
-    });
-}
+const hello = (msg,reply_token) => {
+    c_greet.hello(msg,reply_token)
+  }
