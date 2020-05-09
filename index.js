@@ -35,13 +35,13 @@ app.post('/kreangsak',async (req, res) => {
                     let msg = (event.message.text).trim();
                     select_type_service(msg,reply_token,userId,myCache)
               }
-            }else if(event.type == 'postback' ){
-                console.log('body : ',req.body.events[0])
-                if((event.postback.data).substring(0, 11) == "select_type"){
-                    let type_service = (event.postback.data).substring(11, (event.postback.data).length);
-                    console.log('type service: ',type_service)
-                    //requestStaff(type_service,reply_token,userId,myCache)
-                }
+            }
+        }else if(event.type == 'postback' ){
+            console.log('body : ',req.body.events[0])
+            if((event.postback.data).substring(0, 11) == "select_type"){
+                let type_service = (event.postback.data).substring(11, (event.postback.data).length);
+                console.log('type service: ',type_service)
+                //requestStaff(type_service,reply_token,userId,myCache)
             }
         }
 
