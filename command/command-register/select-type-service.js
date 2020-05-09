@@ -6,6 +6,9 @@ const request = require('request')
 //--------------------------------------------------
 
 let select_type_service = (msg,reply_token,userId,myCache) => {
+    //-----------------delete-------------------
+    myCache.del("select_type_service"+userId)
+    //------------------------------------------
     select(reply_token)
     myCache.set("select_type_service"+userId,msg,300000);
 }

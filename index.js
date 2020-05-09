@@ -10,6 +10,7 @@ app.use(bodyParser.json())
 
 const c_greet = require('./command/greet')
 const c_selectTypeService = require('./command/command-register/select-type-service')
+const c_selectTypeServiceSucces = require('./command/command-register/select-type-service-succes')
 
 app.get('/kreangsak', (req, res) => {
     res.send('Hello GET')
