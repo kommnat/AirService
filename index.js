@@ -37,10 +37,11 @@ app.post('/kreangsak',async (req, res) => {
               }
             }
         }else if(event.type == 'postback' ){
-            console.log('body : ',req.body.events[0])
+            //console.log('body : ',req.body.events[0])
             if((event.postback.data).substring(0, 11) == "select_type"){
                 let type_service = (event.postback.data).substring(11, (event.postback.data).length);
-                console.log('type service: ',type_service)
+                //console.log('type service: ',type_service)
+                select_type_service_succes(type_service,reply_token,userId,myCache)
                 //requestStaff(type_service,reply_token,userId,myCache)
             }
         }
@@ -60,4 +61,8 @@ const hello = (msg,reply_token) => {
 
 const select_type_service = (msg,reply_token,userId,myCache) => {
     c_selectTypeService.select_type_service(msg,reply_token,userId,myCache)
+}
+
+const select_type_service_succes = (type_service,reply_token,userId,myCache) => {
+    c_selectTypeServiceSucces.select_type_service_succes(type_service,reply_token,userId,myCache)
 }
