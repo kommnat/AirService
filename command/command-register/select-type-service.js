@@ -8,6 +8,7 @@ const request = require('request')
 let select_type_service = (msg,reply_token,userId,myCache) => {
     //-----------------delete-------------------
     myCache.del("select_type_service"+userId)
+    myCache.del("type_service"+userId) 
     myCache.del("select_band"+userId)
     //------------------------------------------
     select(reply_token)

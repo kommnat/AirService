@@ -39,7 +39,7 @@ app.post('/kreangsak',async (req, res) => {
                     let msg = (event.message.text).trim();
                     select_type_service(msg,reply_token,userId,myCache)
 
-                }else if(myCache.get("select_type_service"+userId) != null && myCache.get("select_band"+userId) != null && myCache.get("select_band"+userId) != null){
+                }else if(myCache.get("select_type_service"+userId) != null && myCache.get("type_service"+userId) != null && myCache.get("select_band"+userId) != null){
                     let msg = (event.message.text).trim();
                     select_btu(msg,reply_token,userId,myCache)
                 }
