@@ -26,7 +26,7 @@ module.exports = {
                   "type": "postback",
                   "label": "ติดตั้งแอร์",
                   "text": "เลือก ติดตั้งแอร์",
-                  "data": "ติดตั้งแอร์"
+                  "data": "select_typeติดตั้งแอร์"
                 },
                 "color": "#E3C965",
                 "margin": "md",
@@ -38,7 +38,7 @@ module.exports = {
                   "type": "postback",
                   "label": "ซ่อมแอร์",
                   "text": "เลือก ซ่อมแอร์",
-                  "data": "ซ่อมแอร์"
+                  "data": "select_typeซ่อมแอร์"
                 },
                 "color": "#97D474",
                 "margin": "md",
@@ -50,7 +50,7 @@ module.exports = {
                   "type": "postback",
                   "label": "ล้างแอร์",
                   "text": "เลือก ล้างแอร์",
-                  "data": "ล้างแอร์"
+                  "data": "select_typeล้างแอร์"
                 },
                 "color": "#FD8080",
                 "margin": "md",
