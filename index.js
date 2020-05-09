@@ -10,7 +10,7 @@ app.use(bodyParser.json())
 
 const c_greet = require('./command/greet')
 const c_selectTypeService = require('./command/command-register/select-type-service')
-const c_selectTypeServiceSucces = require('./command/command-register/select-type-service-succes')
+const c_selectBandAir = require('./command/command-register/select-band-air')
 
 app.get('/kreangsak', (req, res) => {
     res.send('Hello GET')
@@ -42,7 +42,12 @@ app.post('/kreangsak',async (req, res) => {
             if((event.postback.data).substring(0, 11) == "select_type"){
                 let type_service = (event.postback.data).substring(11, (event.postback.data).length);
                 //console.log('type service: ',type_service)
-                select_type_service_succes(type_service,reply_token,userId,myCache)
+                select_band(type_service,reply_token,userId,myCache)
+                //requestStaff(type_service,reply_token,userId,myCache)
+            }else if((event.postback.data).substring(0, 19) == "select_type_success"){
+                let band_air = (event.postback.data).substring(19, (event.postback.data).length);
+                console.log('band_air: ',band_air)
+                input_generation(band_air,reply_token,userId,myCache)
                 //requestStaff(type_service,reply_token,userId,myCache)
             }
         }
@@ -64,6 +69,6 @@ const select_type_service = (msg,reply_token,userId,myCache) => {
     c_selectTypeService.select_type_service(msg,reply_token,userId,myCache)
 }
 
-const select_type_service_succes = (type_service,reply_token,userId,myCache) => {
-    c_selectTypeServiceSucces.select_type_service_succes(type_service,reply_token,userId,myCache)
+const select_band = (type_service,reply_token,userId,myCache) => {
+    c_selectBandAir.select_band(type_service,reply_token,userId,myCache)
 }

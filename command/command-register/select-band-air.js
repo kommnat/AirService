@@ -5,7 +5,7 @@ const ui = require('../../utils/ui')
 const request = require('request')
 //--------------------------------------------------
 
-let select_type_service_succes = (type_service,reply_token,userId,myCache) => {
+let select_band = (type_service,reply_token,userId,myCache) => {
     if(myCache.get("select_type_service"+userId) != null){
         myCache.set("select_type_service"+userId,type_service,300000);
         select(reply_token)
@@ -34,4 +34,4 @@ function select( reply_token ,) {
         //console.log('status = ' + res.statusCode);
     });
 }
-module.exports = {select_type_service_succes}
+module.exports = {select_band}

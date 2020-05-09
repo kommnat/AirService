@@ -88,7 +88,7 @@ module.exports = {
                   "type": "postback",
                   "label": "Mitsubishi Electric",
                   "text": "เลือก Mitsubishi Electric",
-                  "data": "Mitsubishi Electric"
+                  "data": "select_type_successMitsubishi Electric"
                 },
                 "color": "#E3C965",
                 "margin": "sm",
@@ -100,7 +100,7 @@ module.exports = {
                   "type": "postback",
                   "label": "Daikin",
                   "text": "เลือก Daikin",
-                  "data": "Daikin"
+                  "data": "select_type_successDaikin"
                 },
                 "color": "#97D474",
                 "margin": "md",
@@ -112,7 +112,7 @@ module.exports = {
                   "type": "postback",
                   "label": "Panasonic",
                   "text": "เลือก Panasonic",
-                  "data": "Panasonic"
+                  "data": "select_type_successPanasonic"
                 },
                 "color": "#FD8080",
                 "margin": "md",
@@ -124,7 +124,7 @@ module.exports = {
                   "type": "postback",
                   "label": "Central",
                   "text": "เลือก Central",
-                  "data": "Central"
+                  "data": "select_type_successCentral"
                 },
                 "color": "#B7C856",
                 "margin": "md",
@@ -136,7 +136,7 @@ module.exports = {
                   "type": "postback",
                   "label": "Hitachi",
                   "text": "เลือก Hitachi",
-                  "data": "Hitachi"
+                  "data": "select_type_successHitachi"
                 },
                 "color": "#F65B5B",
                 "margin": "md",
@@ -148,7 +148,7 @@ module.exports = {
                   "type": "postback",
                   "label": "Saijo Denki",
                   "text": "เลือก Saijo Denki",
-                  "data": "Saijo Denki"
+                  "data": "select_type_successSaijo Denki"
                 },
                 "color": "#8DD4DB",
                 "margin": "md",
@@ -160,7 +160,7 @@ module.exports = {
                   "type": "postback",
                   "label": "Carrier",
                   "text": "เลือก Carrier",
-                  "data": "Carrier"
+                  "data": "select_type_successCarrier"
                 },
                 "color": "#EC9CEC",
                 "margin": "md",
@@ -172,7 +172,7 @@ module.exports = {
                   "type": "postback",
                   "label": "LG",
                   "text": "เลือก LG",
-                  "data": "LG"
+                  "data": "select_type_successLG"
                 },
                 "color": "#F4A189",
                 "margin": "md",
@@ -184,7 +184,7 @@ module.exports = {
                   "type": "postback",
                   "label": "Sumsung",
                   "text": "เลือก Sumsung",
-                  "data": "Sumsung"
+                  "data": "select_type_successSumsung"
                 },
                 "color": "#59B961",
                 "margin": "md",
@@ -196,7 +196,7 @@ module.exports = {
                   "type": "postback",
                   "label": "Toshiba",
                   "text": "เลือก Toshiba",
-                  "data": "Toshiba"
+                  "data": "select_type_successToshiba"
                 },
                 "color": "#B580FD",
                 "margin": "md",
@@ -208,7 +208,7 @@ module.exports = {
                   "type": "postback",
                   "label": "Haier",
                   "text": "เลือก Haier",
-                  "data": "Haier"
+                  "data": "select_type_successHaier"
                 },
                 "color": "#5450EE",
                 "margin": "md",
@@ -220,7 +220,7 @@ module.exports = {
                   "type": "postback",
                   "label": "TCL",
                   "text": "เลือก TCL",
-                  "data": "TCL"
+                  "data": "select_type_successTCL"
                 },
                 "color": "#7B386C",
                 "margin": "md",
