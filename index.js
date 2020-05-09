@@ -14,6 +14,7 @@ const c_selectBandAir = require('./command/command-register/select-band-air')
 const c_inputGeneration = require('./command/command-register/input-generation')
 const c_selectBTU = require('./command/command-register/select-btu')
 const c_inputDiscription = require('./command/command-register/input-discription')
+const c_inputNameCustomer = 
 
 app.get('/kreangsak', (req, res) => {
     res.send('Hello GET')
@@ -43,6 +44,10 @@ app.post('/kreangsak',async (req, res) => {
                 }else if((event.message.text).substring(0, 5) != 'เลือก' && myCache.get("select_type_service"+userId) != null && myCache.get("type_service"+userId) != null && myCache.get("select_band"+userId) != null ){
                     let msg = (event.message.text).trim();
                     select_btu(msg,reply_token,userId,myCache)
+
+                }else if((event.message.text).substring(0, 5) != 'เลือก'  && myCache.get("type_service"+userId) != null && myCache.get("select_band"+userId) != null && myCache.get("generation"+userId) != null && myCache.get("select_btu"+userId) != null){
+                    let msg = (event.message.text).trim();
+                    input_name_customer(msg,reply_token,userId,myCache)
                 }
             }
         }else if(event.type == 'postback' ){
@@ -92,10 +97,14 @@ const input_generation = (band_air,reply_token,userId,myCache) => {
     c_inputGeneration.input_generation(band_air,reply_token,userId,myCache)
 }
 
-const select_btu = (msg,reply_token,userId,myCache) =>{
+const select_btu = (msg,reply_token,userId,myCache) => {
     c_selectBTU.select_btu(msg,reply_token,userId,myCache)
 }
 
-const input_discription = (btu_air,reply_token,userId,myCache) =>{
+const input_discription = (btu_air,reply_token,userId,myCache) => {
     c_inputDiscription.input_discription(btu_air,reply_token,userId,myCache)
+}
+
+const input_name_customer = (msg,reply_token,userId,myCache) => {
+    c_inputNameCustomer.input_name_customer(msg,reply_token,userId,myCache)
 }
