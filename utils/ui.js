@@ -29,7 +29,7 @@ module.exports = {
                   "data": "ติดตั้งแอร์"
                 },
                 "color": "#E3C965",
-                "margin": "sm",
+                "margin": "md",
                 "style": "primary"
               },
               {
@@ -41,7 +41,7 @@ module.exports = {
                   "data": "ซ่อมแอร์"
                 },
                 "color": "#97D474",
-                "margin": "sm",
+                "margin": "md",
                 "style": "primary"
               },
               {
@@ -53,7 +53,7 @@ module.exports = {
                   "data": "ล้างแอร์"
                 },
                 "color": "#FD8080",
-                "margin": "sm",
+                "margin": "md",
                 "style": "primary"
               }
             ]
