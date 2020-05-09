@@ -9,7 +9,7 @@ let input_discription = (btu_air,reply_token,userId,myCache) => {
     
     if(myCache.get("select_type_service"+userId) != null && myCache.get("type_service"+userId) != null && myCache.get("select_band"+userId) != null && myCache.get("generation"+userId) != null ){
         myCache.set("select_btu"+userId,btu_air,300000);
-        myCache.set("input_discription"+userId,msg,300000);
+        myCache.set("input_discription"+userId,"input_discription",300000);
         input(reply_token)
         myCache.del("select_type_service"+userId)
     }else{
