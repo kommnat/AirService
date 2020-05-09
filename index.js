@@ -76,6 +76,7 @@ app.post('/kreangsak',async (req, res) => {
                 //requestStaff(type_service,reply_token,userId,myCache)select_btu
             }
         }else if(event.type == 'location' ){
+            console.log('---------location-------')
             if(myCache.get("type_service"+userId) != null && myCache.get("select_band"+userId) != null && myCache.get("generation"+userId) != null && myCache.get("select_btu"+userId) != null && myCache.get("discription"+userId) != null && myCache.get("name_customer"+userId) != null ){
                 let address = (event.message.address);
                 let lat_lon = event.message.latitude+','+event.message.longitude
