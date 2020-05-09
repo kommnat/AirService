@@ -6,7 +6,8 @@ const request = require('request')
 //--------------------------------------------------
 
 let input_generation = (band_air,reply_token,userId,myCache) => {
-    if(myCache.get("select_type_service"+userId) != null){
+    
+    if(myCache.get("select_type_service"+userId) != null && myCache.get("type_service"+userId)){
         myCache.set("select_band"+userId,band_air,300000);
         input(reply_token,band_air)
     }else{

@@ -6,8 +6,9 @@ const request = require('request')
 //--------------------------------------------------
 
 let select_band = (type_service,reply_token,userId,myCache) => {
+    
     if(myCache.get("select_type_service"+userId) != null){
-        myCache.set("select_type_service"+userId,type_service,300000);
+        myCache.set("type_service"+userId,type_service,300000);
         select(reply_token)
     }else{
         console.log('select_type_service == null')
