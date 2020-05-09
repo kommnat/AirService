@@ -5,16 +5,14 @@ const ui = require('../../utils/ui')
 const request = require('request')
 //--------------------------------------------------
 
-let select_type_service = (msg,reply_token,userId,myCache) => {
-    //-----------------delete-------------------
-    myCache.del("select_type_service"+userId)
-    myCache.del("select_band"+userId)
-    //------------------------------------------
-    select(reply_token)
-    myCache.set("select_type_service"+userId,msg,300000);
+let select_btu = (msg,reply_token,userId,myCache) => {
+   
+    console.log('รุ่น คือ ',msg)
+    btu(reply_token)
+    
 }
 
-function select( reply_token ,) {
+function btu(reply_token) {
     
     let headers = {
         'Content-Type': 'application/json',
@@ -23,7 +21,7 @@ function select( reply_token ,) {
     let body = JSON.stringify({
         replyToken: reply_token,
         messages: [
-           ui.flex_select_type
+            ui.flex_select_btu
     ]
     })
     request.post({
@@ -34,4 +32,4 @@ function select( reply_token ,) {
         //console.log('status = ' + res.statusCode);
     });
 }
-module.exports = {select_type_service}
+module.exports = {select_btu}

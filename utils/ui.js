@@ -229,6 +229,127 @@ module.exports = {
             ]
           }
         }
+      },
+      flex_select_btu : {
+        "type": "flex",
+        "altText": "Flex Message",
+        "contents": {
+          "type": "bubble",
+          "direction": "ltr",
+          "header": {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "text",
+                "text": "กรุณาเลือก BTU",
+                "align": "center"
+              }
+            ]
+          },
+          "footer": {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "button",
+                "action": {
+                  "type": "postback",
+                  "label": "9000 ",
+                  "text": "เลือก 9000 BTU",
+                  "data": "select_btu9000"
+                },
+                "color": "#E3C965",
+                "margin": "sm",
+                "style": "primary"
+              },
+              {
+                "type": "button",
+                "action": {
+                  "type": "postback",
+                  "label": "12000",
+                  "text": "เลือก 12000 BTU",
+                  "data": "select_btu12000"
+                },
+                "color": "#97D474",
+                "margin": "md",
+                "style": "primary"
+              },
+              {
+                "type": "button",
+                "action": {
+                  "type": "postback",
+                  "label": "13000",
+                  "text": "เลือก 13000 BTU",
+                  "data": "select_btu13000"
+                },
+                "color": "#FD8080",
+                "margin": "md",
+                "style": "primary"
+              },
+              {
+                "type": "button",
+                "action": {
+                  "type": "postback",
+                  "label": "15000",
+                  "text": "เลือก 15000 BTU",
+                  "data": "select_btu15000"
+                },
+                "color": "#92CADB",
+                "margin": "md",
+                "style": "primary"
+              },
+              {
+                "type": "button",
+                "action": {
+                  "type": "postback",
+                  "label": "18000",
+                  "text": "เลือก 18000 BTU",
+                  "data": "select_btu18000"
+                },
+                "color": "#CADF74",
+                "margin": "md",
+                "style": "primary"
+              },
+              {
+                "type": "button",
+                "action": {
+                  "type": "postback",
+                  "label": "24000",
+                  "text": "เลือก 24000 BTU",
+                  "data": "select_btu24000"
+                },
+                "color": "#8C8AE8",
+                "margin": "md",
+                "style": "primary"
+              },
+              {
+                "type": "button",
+                "action": {
+                  "type": "postback",
+                  "label": "30000",
+                  "text": "เลือก 30000 BTU",
+                  "data": "select_btu30000"
+                },
+                "color": "#F79AB5",
+                "margin": "md",
+                "style": "primary"
+              },
+              {
+                "type": "button",
+                "action": {
+                  "type": "postback",
+                  "label": "36000",
+                  "text": "เลือก 36000 BTU",
+                  "data": "select_btu36000"
+                },
+                "color": "#8DC5A8",
+                "margin": "md",
+                "style": "primary"
+              }
+            ]
+          }
+        }
       }
 
 

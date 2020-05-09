@@ -12,6 +12,7 @@ const c_greet = require('./command/greet')
 const c_selectTypeService = require('./command/command-register/select-type-service')
 const c_selectBandAir = require('./command/command-register/select-band-air')
 const c_inputGeneration = require('./command/command-register/input-generation')
+const c_selectBTU = require('./command/command-register/select-btu')
 
 app.get('/kreangsak', (req, res) => {
     res.send('Hello GET')
@@ -33,10 +34,15 @@ app.post('/kreangsak',async (req, res) => {
                 if((event.message.text).trim() == 'สวัสดี' || (event.message.text).trim() == 'hello' || (event.message.text).trim() == 'สวัสดีครับ' || (event.message.text).trim() == 'สวัสดีคะ'){
                     let msg = (event.message.text).trim()
                     hello(msg,reply_token)
+
                 }else if((event.message.text).trim() == 'ลงทะเบียน'){
                     let msg = (event.message.text).trim();
                     select_type_service(msg,reply_token,userId,myCache)
-              }
+
+                }else if(myCache.del("select_type_service"+userId) != null && myCache.del("select_band"+userId) != null){
+                    let msg = (event.message.text).trim();
+                    select_btu(msg,reply_token,userId,myCache)
+                }
             }
         }else if(event.type == 'postback' ){
             //console.log('body : ',req.body.events[0])
@@ -45,6 +51,7 @@ app.post('/kreangsak',async (req, res) => {
                 console.log('type service: ',type_service)
                 select_band(type_service,reply_token,userId,myCache)
                 //requestStaff(type_service,reply_token,userId,myCache)
+
             }else if((event.postback.data).substring(0, 11) == "select_band"){
                 let band_air = (event.postback.data).substring(11, (event.postback.data).length);
                 console.log('band_air: ',band_air)
@@ -76,4 +83,8 @@ const select_band = (type_service,reply_token,userId,myCache) => {
 
 const input_generation = (band_air,reply_token,userId,myCache) => {
     c_inputGeneration.input_generation(band_air,reply_token,userId,myCache)
+}
+
+const select_btu = (msg,reply_token,userId,myCache) =>{
+    c_selectBTU.select_btu(msg,reply_token,userId,myCache)
 }
