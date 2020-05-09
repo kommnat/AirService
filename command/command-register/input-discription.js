@@ -26,7 +26,7 @@ function input( reply_token) {
         messages: [
             {
                 'type': 'text',
-                'text': 'กรอกคำอธิบายด้วยครับ'
+                'text': 'กรอกคำอธิบายด้วยครับ (ถ้ามี)'
             }
     ]
     })

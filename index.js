@@ -40,7 +40,7 @@ app.post('/kreangsak',async (req, res) => {
                     let msg = (event.message.text).trim();
                     select_type_service(msg,reply_token,userId,myCache)
 
-                }else if((event.message.text).substring(0, 5) != 'เลือก' && myCache.get("select_type_service"+userId) != null && myCache.get("type_service"+userId) != null && myCache.get("select_band"+userId) != null ){
+                }else if((event.message.text).substring((event.message.text).length-3, (event.message.text).length) == 'BTU' && myCache.get("select_type_service"+userId) != null && myCache.get("type_service"+userId) != null && myCache.get("select_band"+userId) != null ){
                     let msg = (event.message.text).trim();
                     select_btu(msg,reply_token,userId,myCache)
                 }
