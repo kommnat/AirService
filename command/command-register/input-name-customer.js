@@ -8,8 +8,10 @@ const request = require('request')
 let input_name_customer = (msg,reply_token,userId,myCache) => {
     
         myCache.set("discription"+userId,msg,300000);
+        myCache.set("input_name_customer"+userId,msg,300000);
         console.log("discription :",msg)
         input(reply_token)  
+        myCache.del("input_discription"+userId)
 }
 
 function input( reply_token) {
