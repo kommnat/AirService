@@ -11,6 +11,7 @@ app.use(bodyParser.json())
 const c_greet = require('./command/greet')
 const c_selectTypeService = require('./command/command-register/select-type-service')
 const c_selectBandAir = require('./command/command-register/select-band-air')
+const c_inputGeneration = require('./command/command-register/input-generation')
 
 app.get('/kreangsak', (req, res) => {
     res.send('Hello GET')
@@ -47,7 +48,7 @@ app.post('/kreangsak',async (req, res) => {
             }else if((event.postback.data).substring(0, 11) == "select_band"){
                 let band_air = (event.postback.data).substring(11, (event.postback.data).length);
                 console.log('band_air: ',band_air)
-                //input_generation(band_air,reply_token,userId,myCache)
+                input_generation(band_air,reply_token,userId,myCache)
                 //requestStaff(type_service,reply_token,userId,myCache)
             }
         }
@@ -71,4 +72,8 @@ const select_type_service = (msg,reply_token,userId,myCache) => {
 
 const select_band = (type_service,reply_token,userId,myCache) => {
     c_selectBandAir.select_band(type_service,reply_token,userId,myCache)
+}
+
+const input_generation = (band_air,reply_token,userId,myCache) => {
+    c_inputGeneration.input_generation(band_air,reply_token,userId,myCache)
 }
