@@ -5,19 +5,17 @@ const ui = require('../../utils/ui')
 const request = require('request')
 //--------------------------------------------------
 
-let select_type_service = (msg,reply_token,userId,myCache) => {
-    //-----------------delete-------------------
-    myCache.del("select_type_service"+userId)
-    myCache.del("type_service"+userId) 
-    myCache.del("select_band"+userId)
-    myCache.del("generation"+userId)
-    myCache.del("select_btu"+userId)
-    //------------------------------------------
-    select(reply_token)
-    myCache.set("select_type_service"+userId,msg,300000);
+let input_discription = (btu_air,reply_token,userId,myCache) => {
+    
+    if(myCache.get("select_type_service"+userId) != null && myCache.get("type_service"+userId) != null && myCache.get("select_band"+userId) != null && myCache.get("generation"+userId) != null ){
+        myCache.set("select_btu"+userId,btu_air,300000);
+        input(reply_token)
+    }else{
+        console.log('select_type_service == null')
+    }
 }
 
-function select( reply_token ,) {
+function input( reply_token) {
     
     let headers = {
         'Content-Type': 'application/json',
@@ -26,7 +24,10 @@ function select( reply_token ,) {
     let body = JSON.stringify({
         replyToken: reply_token,
         messages: [
-           ui.flex_select_type
+            {
+                'type': 'text',
+                'text': 'กรอกคำอธิบายด้วยครับ'
+            }
     ]
     })
     request.post({
@@ -37,4 +38,4 @@ function select( reply_token ,) {
         //console.log('status = ' + res.statusCode);
     });
 }
-module.exports = {select_type_service}
+module.exports = {input_discription}

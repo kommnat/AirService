@@ -13,6 +13,7 @@ const c_selectTypeService = require('./command/command-register/select-type-serv
 const c_selectBandAir = require('./command/command-register/select-band-air')
 const c_inputGeneration = require('./command/command-register/input-generation')
 const c_selectBTU = require('./command/command-register/select-btu')
+const c_inputDiscription = require('./command/command-register/input-discription')
 
 app.get('/kreangsak', (req, res) => {
     res.send('Hello GET')
@@ -48,15 +49,21 @@ app.post('/kreangsak',async (req, res) => {
             //console.log('body : ',req.body.events[0])
             if((event.postback.data).substring(0, 11) == "select_type"){
                 let type_service = (event.postback.data).substring(11, (event.postback.data).length);
-                console.log('type service: ',type_service)
+                //console.log('type service: ',type_service)
                 select_band(type_service,reply_token,userId,myCache)
                 //requestStaff(type_service,reply_token,userId,myCache)
 
             }else if((event.postback.data).substring(0, 11) == "select_band"){
                 let band_air = (event.postback.data).substring(11, (event.postback.data).length);
-                console.log('band_air: ',band_air)
+                //console.log('band_air: ',band_air)
                 input_generation(band_air,reply_token,userId,myCache)
                 //requestStaff(type_service,reply_token,userId,myCache)
+
+            }else if((event.postback.data).substring(0, 10) == "select_btu"){
+                let btu_air = (event.postback.data).substring(10, (event.postback.data).length);
+                console.log('btu_air: ',btu_air)
+                input_discription(btu_air,reply_token,userId,myCache)
+                //requestStaff(type_service,reply_token,userId,myCache)select_btu
             }
         }
 
@@ -87,4 +94,8 @@ const input_generation = (band_air,reply_token,userId,myCache) => {
 
 const select_btu = (msg,reply_token,userId,myCache) =>{
     c_selectBTU.select_btu(msg,reply_token,userId,myCache)
+}
+
+const input_discription = (btu_air,reply_token,userId,myCache) =>{
+    c_inputDiscription.input_discription(btu_air,reply_token,userId,myCache)
 }

@@ -8,6 +8,7 @@ const request = require('request')
 let select_btu = (msg,reply_token,userId,myCache) => {
    
     console.log('รุ่น คือ ',msg)
+    myCache.set("generation"+userId,msg,300000);
     btu(reply_token)
     
 }
