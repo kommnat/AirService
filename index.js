@@ -28,7 +28,7 @@ app.post('/kreangsak',async (req, res) => {
 
         if(event.type == 'message'){
             if(event.message.type ==  'text'){
-              console.log("msg :",event.message.text)
+              //console.log("msg :",event.message.text)
                 if((event.message.text).trim() == 'สวัสดี' || (event.message.text).trim() == 'hello' || (event.message.text).trim() == 'สวัสดีครับ' || (event.message.text).trim() == 'สวัสดีคะ'){
                     let msg = (event.message.text).trim()
                     hello(msg,reply_token)
@@ -44,8 +44,8 @@ app.post('/kreangsak',async (req, res) => {
                 console.log('type service: ',type_service)
                 select_band(type_service,reply_token,userId,myCache)
                 //requestStaff(type_service,reply_token,userId,myCache)
-            }else if((event.postback.data).substring(0, 19) == "select_type_success"){
-                let band_air = (event.postback.data).substring(19, (event.postback.data).length);
+            }else if((event.postback.data).substring(0, 11) == "select_band"){
+                let band_air = (event.postback.data).substring(11, (event.postback.data).length);
                 console.log('band_air: ',band_air)
                 //input_generation(band_air,reply_token,userId,myCache)
                 //requestStaff(type_service,reply_token,userId,myCache)

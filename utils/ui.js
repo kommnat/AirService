@@ -88,7 +88,7 @@ module.exports = {
                   "type": "postback",
                   "label": "Mitsubishi Electric",
                   "text": "เลือก Mitsubishi Electric",
-                  "data": "select_type_successMitsubishi Electric"
+                  "data": "select_bandMitsubishi Electric"
                 },
                 "color": "#E3C965",
                 "margin": "sm",
@@ -100,7 +100,7 @@ module.exports = {
                   "type": "postback",
                   "label": "Daikin",
                   "text": "เลือก Daikin",
-                  "data": "select_type_successDaikin"
+                  "data": "select_bandDaikin"
                 },
                 "color": "#97D474",
                 "margin": "md",
@@ -112,7 +112,7 @@ module.exports = {
                   "type": "postback",
                   "label": "Panasonic",
                   "text": "เลือก Panasonic",
-                  "data": "select_type_successPanasonic"
+                  "data": "select_bandPanasonic"
                 },
                 "color": "#FD8080",
                 "margin": "md",
@@ -124,7 +124,7 @@ module.exports = {
                   "type": "postback",
                   "label": "Central",
                   "text": "เลือก Central",
-                  "data": "select_type_successCentral"
+                  "data": "select_bandCentral"
                 },
                 "color": "#B7C856",
                 "margin": "md",
@@ -136,7 +136,7 @@ module.exports = {
                   "type": "postback",
                   "label": "Hitachi",
                   "text": "เลือก Hitachi",
-                  "data": "select_type_successHitachi"
+                  "data": "select_bandHitachi"
                 },
                 "color": "#F65B5B",
                 "margin": "md",
@@ -148,7 +148,7 @@ module.exports = {
                   "type": "postback",
                   "label": "Saijo Denki",
                   "text": "เลือก Saijo Denki",
-                  "data": "select_type_successSaijo Denki"
+                  "data": "select_bandSaijo Denki"
                 },
                 "color": "#8DD4DB",
                 "margin": "md",
@@ -160,7 +160,7 @@ module.exports = {
                   "type": "postback",
                   "label": "Carrier",
                   "text": "เลือก Carrier",
-                  "data": "select_type_successCarrier"
+                  "data": "select_bandCarrier"
                 },
                 "color": "#EC9CEC",
                 "margin": "md",
@@ -172,7 +172,7 @@ module.exports = {
                   "type": "postback",
                   "label": "LG",
                   "text": "เลือก LG",
-                  "data": "select_type_successLG"
+                  "data": "select_bandLG"
                 },
                 "color": "#F4A189",
                 "margin": "md",
@@ -184,7 +184,7 @@ module.exports = {
                   "type": "postback",
                   "label": "Sumsung",
                   "text": "เลือก Sumsung",
-                  "data": "select_type_successSumsung"
+                  "data": "select_bandSumsung"
                 },
                 "color": "#59B961",
                 "margin": "md",
@@ -196,7 +196,7 @@ module.exports = {
                   "type": "postback",
                   "label": "Toshiba",
                   "text": "เลือก Toshiba",
-                  "data": "select_type_successToshiba"
+                  "data": "select_bandToshiba"
                 },
                 "color": "#B580FD",
                 "margin": "md",
@@ -208,7 +208,7 @@ module.exports = {
                   "type": "postback",
                   "label": "Haier",
                   "text": "เลือก Haier",
-                  "data": "select_type_successHaier"
+                  "data": "select_bandHaier"
                 },
                 "color": "#5450EE",
                 "margin": "md",
@@ -220,7 +220,7 @@ module.exports = {
                   "type": "postback",
                   "label": "TCL",
                   "text": "เลือก TCL",
-                  "data": "select_type_successTCL"
+                  "data": "select_bandTCL"
                 },
                 "color": "#7B386C",
                 "margin": "md",
