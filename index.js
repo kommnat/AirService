@@ -30,7 +30,7 @@ app.post('/kreangsak',async (req, res) => {
         let reply_token = req.body.events[0].replyToken
         let event = req.body.events[0]
         let userId = req.body.events[0].source.userId 
-        console.log(event)
+        //console.log(event)
         if(event.type == 'message'){
             if(event.message.type ==  'text'){
               //console.log("msg :",event.message.text)
@@ -71,9 +71,17 @@ app.post('/kreangsak',async (req, res) => {
 
             }else if((event.postback.data).substring(0, 10) == "select_btu"){
                 let btu_air = (event.postback.data).substring(10, (event.postback.data).length);
-                console.log('btu_air: ',btu_air)
+                //console.log('btu_air: ',btu_air)
                 input_discription(btu_air,reply_token,userId,myCache)
                 //requestStaff(type_service,reply_token,userId,myCache)select_btu
+            }
+        }else if(event.type == 'location' ){
+            if(myCache.get("type_service"+userId) != null && myCache.get("select_band"+userId) != null && myCache.get("generation"+userId) != null && myCache.get("select_btu"+userId) != null && myCache.get("discription"+userId) != null && myCache.get("name_customer"+userId) != null ){
+                let address = (event.message.address);
+                let lat_lon = event.message.latitude+','+event.message.longitude
+                console.log(address)
+                console.log(lat_lon)
+                save_location(address,lat_lon,reply_token,userId,myCache)
             }
         }
 
