@@ -41,7 +41,7 @@ app.post('/kreangsak',async (req, res) => {
             //console.log('body : ',req.body.events[0])
             if((event.postback.data).substring(0, 11) == "select_type"){
                 let type_service = (event.postback.data).substring(11, (event.postback.data).length);
-                //console.log('type service: ',type_service)
+                console.log('type service: ',type_service)
                 select_band(type_service,reply_token,userId,myCache)
                 //requestStaff(type_service,reply_token,userId,myCache)
             }else if((event.postback.data).substring(0, 19) == "select_type_success"){
