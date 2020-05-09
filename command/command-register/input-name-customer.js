@@ -23,7 +23,7 @@ function input( reply_token) {
         messages: [
             {
                 'type': 'text',
-                'text': 'กรอกชื่อของเจ้าแอร์ด้วยครับ (ถ้ามี)'
+                'text': 'กรอกชื่อของเจ้าแอร์ด้วยครับ'
             }
     ]
     })

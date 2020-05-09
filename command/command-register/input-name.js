@@ -5,21 +5,14 @@ const ui = require('../../utils/ui')
 const request = require('request')
 //--------------------------------------------------
 
-let select_type_service = (msg,reply_token,userId,myCache) => {
-    //-----------------delete-------------------
-    myCache.del("select_type_service"+userId)
-    myCache.del("type_service"+userId) 
-    myCache.del("select_band"+userId)
-    myCache.del("generation"+userId)
-    myCache.del("select_btu"+userId)
-    myCache.del("discription"+userId)
-    myCache.del("input_name_customer"+userId)
-    //------------------------------------------
-    select(reply_token)
-    myCache.set("select_type_service"+userId,msg,300000);
+let input_name = (msg,reply_token,userId,myCache) => {
+    
+        myCache.set("input_name_customer"+userId,msg,300000);
+        console.log("name_customer :",msg)
+        input(reply_token)  
 }
 
-function select( reply_token ,) {
+function input( reply_token) {
     
     let headers = {
         'Content-Type': 'application/json',
@@ -28,7 +21,10 @@ function select( reply_token ,) {
     let body = JSON.stringify({
         replyToken: reply_token,
         messages: [
-           ui.flex_select_type
+            {
+                'type': 'text',
+                'text': 'เลือกตำแหน่งของเจ้าแอร์ด้วยครับ'
+            }
     ]
     })
     request.post({
@@ -39,4 +35,4 @@ function select( reply_token ,) {
         //console.log('status = ' + res.statusCode);
     });
 }
-module.exports = {select_type_service}
+module.exports = {input_name}
