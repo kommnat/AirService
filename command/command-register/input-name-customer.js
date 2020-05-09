@@ -9,9 +9,7 @@ let input_name_customer = (msg,reply_token,userId,myCache) => {
     
         myCache.set("discription"+userId,msg,300000);
         console.log("discription :",msg)
-        input(reply_token)
-        
-    
+        input(reply_token)  
 }
 
 function input( reply_token) {

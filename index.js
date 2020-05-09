@@ -32,7 +32,7 @@ app.post('/kreangsak',async (req, res) => {
 
         if(event.type == 'message'){
             if(event.message.type ==  'text'){
-              //console.log("msg :",event.message.text)
+              console.log("msg :",event.message.text)
                 if((event.message.text).trim() == 'สวัสดี' || (event.message.text).trim() == 'hello' || (event.message.text).trim() == 'สวัสดีครับ' || (event.message.text).trim() == 'สวัสดีคะ'){
                     let msg = (event.message.text).trim()
                     hello(msg,reply_token)
@@ -48,6 +48,10 @@ app.post('/kreangsak',async (req, res) => {
                 }else if((event.message.text).substring(0, 5) != 'เลือก'  && myCache.get("type_service"+userId) != null && myCache.get("select_band"+userId) != null && myCache.get("generation"+userId) != null && myCache.get("select_btu"+userId) != null){
                     let msg = (event.message.text).trim();
                     input_name_customer(msg,reply_token,userId,myCache)
+
+                }else if((event.message.text).substring(0, 5) != 'เลือก'  && myCache.get("type_service"+userId) != null && myCache.get("select_band"+userId) != null && myCache.get("generation"+userId) != null && myCache.get("select_btu"+userId) != null && myCache.get("discription"+userId) != null ){
+                    let msg = (event.message.text).trim();
+                    //input_name_customer(msg,reply_token,userId,myCache)
                 }
             }
         }else if(event.type == 'postback' ){
