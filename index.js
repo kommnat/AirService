@@ -14,7 +14,7 @@ const c_selectBandAir = require('./command/command-register/select-band-air')
 const c_inputGeneration = require('./command/command-register/input-generation')
 const c_selectBTU = require('./command/command-register/select-btu')
 const c_inputDiscription = require('./command/command-register/input-discription')
-const c_inputNameCustomer = 
+const c_inputNameCustomer = require('./command/command-register/input-name-customer')
 
 app.get('/kreangsak', (req, res) => {
     res.send('Hello GET')
