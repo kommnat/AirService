@@ -5,56 +5,56 @@ const cst = require('../utils/constants')
 
 
 
-const data_server = (typeService,bandAir,generationAir,airBTU,discriptionService,nameCustomer,addressCustomer,lat_lon,dateTime,price) => {
+const data_server = (type,band,generation,BTU,discription,name,address,latlon,date,pri) => {
     //bandAir,generationAir,airBTU,discriptionService,nameCustomer,addressCustomer,lat_lon,dateTime,price
     let  typeService = [
         [
-            typeService
+            type
         ]   
       ];  
     let  bandAir = [
         [
-            bandAir
+            band
         ]   
       ];  
     let  generationAir = [
         [
-            generationAir
+            generation
         ]   
       ]; 
     let  airBTU = [
         [
-            airBTU
+            BTU
         ]   
       ]; 
     let  discriptionService = [
         [
-            discriptionService
+            discription
         ]   
       ];   
     let  nameCustomer = [
         [
-            nameCustomer
+            name
         ]   
       ];   
     let  addressCustomer = [
         [
-            addressCustomer
+            address
         ]   
       ];   
     let  lat_lon = [
         [
-            lat_lon
+            latlon
         ]   
       ];   
     let  dateTime = [
         [
-            dateTime
+            date
         ]   
       ];   
     let  price = [
         [
-            price
+            pri
         ]   
       ];   
     const client = new google.auth.JWT(
