@@ -18,6 +18,8 @@ const c_inputNameCustomer = require('./command/command-register/input-name-custo
 const c_inputName = require('./command/command-register/input-name')
 const c_saveLocation = require('./command/command-register/save-location')
 const c_inputPrice = require('./command/command-register/input-price')
+const c_saveData = require('./command/command-register/save-data')
+const c_cancleData = require('./command/command-register/cancle-data')
 
 app.get('/kreangsak', (req, res) => {
     res.send('Hello GET')
@@ -56,9 +58,15 @@ app.post('/kreangsak',async (req, res) => {
                     let msg = (event.message.text).trim();
                     input_name(msg,reply_token,userId,myCache)
 
-                }else if((event.message.text).substring(0, 5) != 'เลือก'  && myCache.get("type_service"+userId) != null && myCache.get("select_band"+userId) != null && myCache.get("generation"+userId) != null && myCache.get("select_btu"+userId) != null && myCache.get("discription"+userId) != null && myCache.get("address"+userId) != null && myCache.get("lat_lon"+userId) != null ){
+                }else if((event.message.text).substring(0, 5) != 'เลือก' && (event.message.text) != 'บันทึก' && (event.message.text) != 'ยกเลิก' && myCache.get("type_service"+userId) != null && myCache.get("select_band"+userId) != null && myCache.get("generation"+userId) != null && myCache.get("select_btu"+userId) != null && myCache.get("discription"+userId) != null && myCache.get("address"+userId) != null && myCache.get("lat_lon"+userId) != null ){
                     let price = (event.message.text).trim();
                     input_price(price,reply_token,userId,myCache)
+
+                }else if((event.message.text) == 'บันทึก'  && myCache.get("type_service"+userId) != null && myCache.get("select_band"+userId) != null && myCache.get("generation"+userId) != null && myCache.get("select_btu"+userId) != null && myCache.get("discription"+userId) != null && myCache.get("name_customer"+userId) != null && myCache.get("address"+userId) != null && myCache.get("lat_lon"+userId) != null && myCache.set("price"+userId) != null ){
+                    save_data(reply_token,userId,myCache)
+
+                }else if((event.message.text) == 'ยกเลิก'  && myCache.get("type_service"+userId) != null && myCache.get("select_band"+userId) != null && myCache.get("generation"+userId) != null && myCache.get("select_btu"+userId) != null && myCache.get("discription"+userId) != null && myCache.get("name_customer"+userId) != null && myCache.get("address"+userId) != null && myCache.get("lat_lon"+userId) != null && myCache.set("price"+userId) != null ){
+                    cancle_data(reply_token,userId,myCache)
                 }
             }else if(event.message.type == 'location' ){
                 //console.log('---------location-------')
@@ -139,4 +147,12 @@ const save_location = (address,lat_lon,reply_token,userId,myCache) => {
 
 const input_price = (price,reply_token,userId,myCache) => {
     c_inputPrice.input_price(price,reply_token,userId,myCache)
+}
+
+const save_data = (reply_token,userId,myCache) =>{
+    c_saveData.save_data(reply_token,userId,myCache)
+}
+
+const cancle_data = (reply_token,userId,myCache) =>{
+    c_cancleData.cancle_data(reply_token,userId,myCache)
 }

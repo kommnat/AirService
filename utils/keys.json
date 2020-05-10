@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "airservice-276616",
+  "private_key_id": "9ae88bb4728fbd8eb0f20f38cf5e5af12854e1a7",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC9Uy5J7YBU2xmb\nOP1gb7AAZSYWwt5RSF0zvcp91jnBIUbC+27GjLNez2YWu4FgNisvtuuR4W8WYKq3\nGJ2ZxNp+j5z0WJ9qd1rSXr42fwuGPjnzEw2Zo/hti2hmJl9tgAjRtcj+Lxi+A4i1\nBgA/pV/9ABLXA+nirRyIiMNphpkiHbbnr2nI8+WHkjRyRyjmerKd1ssCcGljy3C6\n04NklmJYAjXHmOmxLaYRYMbI9PuMGMc5qYuLRhBp3kgw2xmNWzchWuzFGXvxZKRM\nUQErx7eWossvRbwAroh/ZE+70aWLpPU/Ww268npGU/3G5p6eOEOFEApExx9ILzWS\nFVeQpqmzAgMBAAECggEAWKe3+FRoENRcpExGkj8ausSi1mvAMW3ifxUz2kNT3jVX\n7nxQ/lbqs84I70I0rjoPdROCMljPbTotFvpG6re83SEhDWbml7N2ayaEif5qBh3j\ngwj8CGM5NQrgA12auCsJdjJbAXRKcMg03xgFS8iEL3Q2Xktt3YDU6LaqUyL9WHSl\nH92TrZOZxIIxBbJn/CGo6P5Rb5Kjb2VMFZoGSxJPb/tB0YhIElUhwosu2HvSTiYS\nh6twTgqJEjCGFISBfyQ+w0jidQmlsZfVHpQcl4A0wJ0Wbwj0dtFz96n9zae8Uagl\nq8qfWIJfNgqApWQ0xe+RfhJZzQ1fC6x2MbH3xSmfSQKBgQDpz0etc8LVlmzcgebq\nQFEf2Z2+RufH6aswG2rfADjHKy1yCmWIB5jKIcdGxyDTI879HC13Kk3mNiesRNDx\nwl0/Ko1g4brj9Y7uWdEsUcpGysQugBayXRr29o5vOumJ0DbaIa4O3r7+BpPFWWgU\n2hkqrF02uvXBwVKbNcfp9rmSbwKBgQDPSxV2/IzEw+RoKiOWDsvC+fM+DMX+HKaK\n0ssEbgl70wsFYc7CHOvSNC14mjoaqREvYLpRT6/GMe562L2FCBj4vmhDVzGgI9RA\n2cXAJokc3xtjwDbf7p6ZG5vhl0ZWQ1A29hESBSLt5uWcWrwj/tx57CT796s+Iuxe\ntznnkJ8u/QKBgGH3XA0taAGemdZ7B4o3kMZLpHDJvOxi2Du8ATeXHDM3wD78ZDZv\nGHH5XUomvXY6lswvNk2sCB/hqRXhb7scuX1yEvL5IhnKFi2ArMhpLNwksbbaLKhn\nopjADkZE5P29pH4ZhpjsdBJ0Jw6Vu6qhB9J9jkEUbUzV+ArYqf86Rd85AoGBAJzX\nIIyAlTmjRcQSbg5xb3Y8i/Bc1clogBH1X6ogX4iSq3oNANUZ8MuAsw7XEjNtzBTe\nyNoQwtvgl6HXL73h3JMH7fdVl7Skp0nR+69g+MkhfaXBn0NbViBeJVlQjeVi1ORg\n1ZWe0UjTNNNSS5uoj8SoCWujfqtq3RDk7Sjp4ac5AoGAUpXK+TSsWooOLy0GdoTT\n/WRPGvVZz5puujT7nfsNRiI7F9opkJ/X06cgcEBYvKee48UvdNwvxBytR/QgJVZK\nPfpxz5VV4m2bdxJ58l/o4SbOsur+XK0dU6pD//sRWA1kSwujzhPo1c0/NvJrchK6\n++fMLPoDXqwx3RiL81NRD6w=\n-----END PRIVATE KEY-----\n",
+  "client_email": "airserviceman@airservice-276616.iam.gserviceaccount.com",
+  "client_id": "117745252932944122766",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/airserviceman%40airservice-276616.iam.gserviceaccount.com"
+}
