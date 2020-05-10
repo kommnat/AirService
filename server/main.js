@@ -7,11 +7,11 @@ const cst = require('../utils/constants')
 
 const data_server = (typeService,) => {
     //bandAir,generationAir,airBTU,discriptionService,nameCustomer,addressCustomer,lat_lon,dateTime,price
-    let val = [
-        [
-            "ซ่อม"
-        ]   
-      ];  
+    // let val = [
+    //     [
+    //         "ซ่อม"
+    //     ]   
+    //   ];  
     const client = new google.auth.JWT(
         keys.client_email,
         null,
@@ -27,7 +27,7 @@ const data_server = (typeService,) => {
             return;
         }else{
             console.log('Connected!');
-            gsrun(client,val)
+            gsrun(client,typeService)
         }
     });
     
