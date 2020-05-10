@@ -3,17 +3,28 @@ const cst = require('../../utils/constants')
 const ui = require('../../utils/ui')
 //--------------------------------------------------
 const request = require('request')
+var moment = require('moment')
 //--------------------------------------------------
 
 let input_price = (price,reply_token,userId,myCache) => {
     
         myCache.set("price"+userId,price,300000);
-        console.log("price :",price)
-        input(reply_token)  
+        let typeService = myCache.get("type_service"+userId)
+        let bandAir = myCache.get("select_band"+userId)
+        let generationAir = myCache.get("generation"+userId)
+        let airBTU = myCache.get("select_btu"+userId)
+        let discriptionService = myCache.get("discription"+userId)
+        let nameCustomer = myCache.get("name_customer"+userId)
+        let addressCustomer = myCache.get("address"+userId)
+        let lat_lon = myCache.get("lat_lon"+userId)
+        let dateTime = moment().add(7, 'hours').format('YYYY-MM-D HH:MM')
+        // console.log("type_service :",type_service)
+        // console.log("price :",price)
+        input(reply_token,typeService,bandAir,generationAir,airBTU,discriptionService,nameCustomer,addressCustomer,lat_lon,dateTime,price)  
        
 }
 
-function input(reply_token) {
+function input(reply_token,typeService,bandAir,generationAir,airBTU,discriptionService,nameCustomer,addressCustomer,lat_lon,dateTime,price)   {
     
     let headers = {
         'Content-Type': 'application/json',
@@ -24,7 +35,7 @@ function input(reply_token) {
         messages: [
             {
                 "type": "flex",
-                "altText": "Flex Message",
+                "altText": "ลงทะเบียน",
                 "contents": {
                   "type": "bubble",
                   "direction": "ltr",
@@ -45,7 +56,9 @@ function input(reply_token) {
                       //ล้าง https://sv1.picz.in.th/images/2020/05/10/UVFPbW.png
                       {
                         "type": "image",
-                        "url": "https://sv1.picz.in.th/images/2020/05/10/UVFget.png",
+                        "url": typeService == 'ติดตั้งแอร์'?('https://sv1.picz.in.th/images/2020/05/10/UVFget.png'):('') && 
+                        typeService == 'ซ่อมแอร์'?('https://sv1.picz.in.th/images/2020/05/10/UVFbWV.png'):('') && 
+                        typeService == 'ล้างแอร์'?('https://sv1.picz.in.th/images/2020/05/10/UVFPbW.png'):('')  ,
                         "align": "center",
                         "gravity": "center",
                         "size": "full"
@@ -70,7 +83,7 @@ function input(reply_token) {
                           },
                           {
                             "type": "text",
-                            "text": "ล้างแอร์",
+                            "text": typeService,
                             "flex": 2,
                             "align": "start",
                             "gravity": "center"
@@ -92,7 +105,7 @@ function input(reply_token) {
                           },
                           {
                             "type": "text",
-                            "text": "Mitsubishi Electric",
+                            "text": bandAir,
                             "flex": 3,
                             "gravity": "center"
                           }
@@ -113,7 +126,7 @@ function input(reply_token) {
                           },
                           {
                             "type": "text",
-                            "text": "kq-1234567",
+                            "text": generationAir,
                             "flex": 3,
                             "gravity": "center"
                           }
@@ -134,7 +147,7 @@ function input(reply_token) {
                           },
                           {
                             "type": "text",
-                            "text": "9000",
+                            "text": airBTU,
                             "flex": 3,
                             "gravity": "center"
                           }
@@ -155,7 +168,7 @@ function input(reply_token) {
                           },
                           {
                             "type": "text",
-                            "text": "ไม่มี",
+                            "text": discriptionService,
                             "flex": 1,
                             "align": "start",
                             "gravity": "center",
@@ -178,7 +191,7 @@ function input(reply_token) {
                           },
                           {
                             "type": "text",
-                            "text": "น้องน้ำ",
+                            "text": nameCustomer,
                             "flex": 2,
                             "align": "start",
                             "gravity": "center",
@@ -201,7 +214,7 @@ function input(reply_token) {
                           },
                           {
                             "type": "text",
-                            "text": "33/67 ถนน บรมราชชนนี แขวง ศาลาธรรมสพน์ เขตทวีวัฒนา กรุงเทพมหานคร 10170 ประเทศไทย",
+                            "text": addressCustomer,
                             "flex": 2,
                             "align": "start",
                             "gravity": "center",
@@ -224,7 +237,7 @@ function input(reply_token) {
                           },
                           {
                             "type": "text",
-                            "text": "10/07/2563",
+                            "text": dateTime,
                             "flex": 3,
                             "align": "start",
                             "gravity": "center",
@@ -247,7 +260,7 @@ function input(reply_token) {
                           },
                           {
                             "type": "text",
-                            "text": "500",
+                            "text": price,
                             "flex": 1,
                             "align": "start",
                             "gravity": "center",
