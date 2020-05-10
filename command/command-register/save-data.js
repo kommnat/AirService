@@ -23,7 +23,7 @@ let save_data = (reply_token,userId,myCache) => {
         let dateTime = moment().add(7, 'hours').format('YYYY-MM-D HH:MM')
         let price = myCache.get("price"+userId)
         // console.log("type_service :",type_service)
-        // console.log("price :",price)
+        console.log("---------price------- :",price)
        save(reply_token,)
        sv.data_server(typeService,bandAir,generationAir,airBTU,discriptionService,nameCustomer,addressCustomer,lat_lon,dateTime,price)
 
