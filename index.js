@@ -17,6 +17,7 @@ const c_inputDiscription = require('./command/command-register/input-discription
 const c_inputNameCustomer = require('./command/command-register/input-name-customer')
 const c_inputName = require('./command/command-register/input-name')
 const c_saveLocation = require('./command/command-register/save-location')
+const c_inputPrice = require('./command/command-register/input-price')
 
 app.get('/kreangsak', (req, res) => {
     res.send('Hello GET')
@@ -54,6 +55,10 @@ app.post('/kreangsak',async (req, res) => {
                 }else if((event.message.text).substring(0, 5) != 'เลือก'  && myCache.get("type_service"+userId) != null && myCache.get("select_band"+userId) != null && myCache.get("generation"+userId) != null && myCache.get("select_btu"+userId) != null && myCache.get("discription"+userId) != null && myCache.get("input_name_customer"+userId) != null ){
                     let msg = (event.message.text).trim();
                     input_name(msg,reply_token,userId,myCache)
+
+                }else if((event.message.text).substring(0, 5) != 'เลือก'  && myCache.get("type_service"+userId) != null && myCache.get("select_band"+userId) != null && myCache.get("generation"+userId) != null && myCache.get("select_btu"+userId) != null && myCache.get("discription"+userId) != null && myCache.get("address"+userId) != null && myCache.get("lat_lon"+userId) != null ){
+                    let price = (event.message.text).trim();
+                    input_price(price,reply_token,userId,myCache)
                 }
             }else if(event.message.type == 'location' ){
                 //console.log('---------location-------')
@@ -130,4 +135,8 @@ const input_name = (msg,reply_token,userId,myCache) => {
 
 const save_location = (address,lat_lon,reply_token,userId,myCache) => {
     c_saveLocation.save_location(address,lat_lon,reply_token,userId,myCache)
+}
+
+const input_price = (price,reply_token,userId,myCache) => {
+    c_inputPrice.input_price(price,reply_token,userId,myCache)
 }
