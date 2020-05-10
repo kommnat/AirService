@@ -91,85 +91,85 @@ async function gsrun(cl,typeService,bandAir,generationAir,airBTU,discriptionServ
     //console.log(data.data.values.length)
     var countData = data.data.values.length + 2
    
-    const updateOptions = {
+    const update_typeService = {
         spreadsheetId: cst.spreadsheetId ,
         range: 'B'+countData,
         valueInputOption: 'USER_ENTERED',
         resource: {values:typeService}
     };
-    gsapi.spreadsheets.values.update(updateOptions);
+    gsapi.spreadsheets.values.update(update_typeService);
 
-    const updateOptions1 = {
+    const update_bandAir = {
         spreadsheetId: cst.spreadsheetId ,
         range: 'C'+countData,
         valueInputOption: 'USER_ENTERED',
         resource: {values:bandAir}
     };
-    gsapi.spreadsheets.values.update(updateOptions1);
+    gsapi.spreadsheets.values.update(update_bandAir);
     
-    const updateOptions1 = {
+    const update_generationAir = {
         spreadsheetId: cst.spreadsheetId ,
         range: 'D'+countData,
         valueInputOption: 'USER_ENTERED',
         resource: {values:generationAir}
     };
-    gsapi.spreadsheets.values.update(updateOptions1);
+    gsapi.spreadsheets.values.update(update_generationAir);
 
-    const updateOptions1 = {
+    const update_airBTU = {
         spreadsheetId: cst.spreadsheetId ,
         range: 'E'+countData,
         valueInputOption: 'USER_ENTERED',
         resource: {values:airBTU}
     };
-    gsapi.spreadsheets.values.update(updateOptions1);
+    gsapi.spreadsheets.values.update(update_airBTU);
 
-    const updateOptions1 = {
+    const update_discriptionService = {
         spreadsheetId: cst.spreadsheetId ,
         range: 'F'+countData,
         valueInputOption: 'USER_ENTERED',
         resource: {values:discriptionService}
     };
-    gsapi.spreadsheets.values.update(updateOptions1);
+    gsapi.spreadsheets.values.update(update_discriptionService);
 
-    const updateOptions1 = {
+    const update_nameCustomer = {
         spreadsheetId: cst.spreadsheetId ,
         range: 'G'+countData,
         valueInputOption: 'USER_ENTERED',
         resource: {values:nameCustomer}
     };
-    gsapi.spreadsheets.values.update(updateOptions1);
+    gsapi.spreadsheets.values.update(update_nameCustomer);
 
-    const updateOptions1 = {
+    const update_addressCustomer = {
         spreadsheetId: cst.spreadsheetId ,
         range: 'H'+countData,
         valueInputOption: 'USER_ENTERED',
         resource: {values:addressCustomer}
     };
-    gsapi.spreadsheets.values.update(updateOptions1);
+    gsapi.spreadsheets.values.update(update_addressCustomer);
 
-    const updateOptions1 = {
+    const update_lat_lon = {
         spreadsheetId: cst.spreadsheetId ,
         range: 'I'+countData,
         valueInputOption: 'USER_ENTERED',
         resource: {values:lat_lon}
     };
-    gsapi.spreadsheets.values.update(updateOptions1);
+    gsapi.spreadsheets.values.update(update_lat_lon);
 
-    const updateOptions1 = {
+    const update_dateTime = {
         spreadsheetId: cst.spreadsheetId ,
         range: 'J'+countData,
         valueInputOption: 'USER_ENTERED',
         resource: {values:dateTime}
     };
-    gsapi.spreadsheets.values.update(updateOptions1);
+    gsapi.spreadsheets.values.update(update_dateTime);
 
-    const updateOptions1 = {
+    const update_price = {
         spreadsheetId: cst.spreadsheetId ,
         range: 'K'+countData,
         valueInputOption: 'USER_ENTERED',
         resource: {values:price}
     };
-    gsapi.spreadsheets.values.update(updateOptions1);
+    gsapi.spreadsheets.values.update(update_price);
    
 
 }

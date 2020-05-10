@@ -25,7 +25,7 @@ let save_data = (reply_token,userId,myCache) => {
         // console.log("type_service :",type_service)
         // console.log("price :",price)
        save(reply_token,)
-       sv.data_server(typeService)  
+       sv.data_server(typeService,bandAir,generationAir,airBTU,discriptionService,nameCustomer,addressCustomer,lat_lon,dateTime,price)
 
 }
 
