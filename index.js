@@ -62,10 +62,10 @@ app.post('/kreangsak',async (req, res) => {
                     let price = (event.message.text).trim();
                     input_price(price,reply_token,userId,myCache)
 
-                }else if((event.message.text) == 'บันทึก'  && myCache.get("type_service"+userId) != null && myCache.get("select_band"+userId) != null && myCache.get("generation"+userId) != null && myCache.get("select_btu"+userId) != null && myCache.get("discription"+userId) != null && myCache.get("name_customer"+userId) != null && myCache.get("address"+userId) != null && myCache.get("lat_lon"+userId) != null && myCache.set("price"+userId) != null ){
+                }else if((event.message.text) == 'บันทึก'  && myCache.get("type_service"+userId) != null && myCache.get("select_band"+userId) != null && myCache.get("generation"+userId) != null && myCache.get("select_btu"+userId) != null && myCache.get("discription"+userId) != null && myCache.get("name_customer"+userId) != null && myCache.get("address"+userId) != null && myCache.get("lat_lon"+userId) != null && myCache.get("price"+userId) != null ){
                     save_data(reply_token,userId,myCache)
 
-                }else if((event.message.text) == 'ยกเลิก'  && myCache.get("type_service"+userId) != null && myCache.get("select_band"+userId) != null && myCache.get("generation"+userId) != null && myCache.get("select_btu"+userId) != null && myCache.get("discription"+userId) != null && myCache.get("name_customer"+userId) != null && myCache.get("address"+userId) != null && myCache.get("lat_lon"+userId) != null && myCache.set("price"+userId) != null ){
+                }else if((event.message.text) == 'ยกเลิก'  && myCache.get("type_service"+userId) != null && myCache.get("select_band"+userId) != null && myCache.get("generation"+userId) != null && myCache.get("select_btu"+userId) != null && myCache.get("discription"+userId) != null && myCache.get("name_customer"+userId) != null && myCache.get("address"+userId) != null && myCache.get("lat_lon"+userId) != null && myCache.get("price"+userId) != null ){
                     cancle_data(reply_token,userId,myCache)
                 }
             }else if(event.message.type == 'location' ){
