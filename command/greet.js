@@ -18,7 +18,7 @@ function greet(msg, reply_token ,) {
         replyToken: reply_token,
         messages: [{
             'type': 'text',
-            'text': msg +" คุณพิมลพัชร์ \nวันนี้มีลงทะเบียนเพิ่มใหม่ครับ",
+            'text': msg +" คุณพิมลพัชร์ \nวันนี้มีลงทะเบียนเพิ่มไหมครับ",
             "quickReply": { 
                 "items": [
                   {
