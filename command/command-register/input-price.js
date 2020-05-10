@@ -28,7 +28,7 @@ let input_price = (price,reply_token,userId,myCache) => {
         // console.log(nameCustomer)
         // console.log(addressCustomer)
         // console.log(lat_lon)
-        // console.log(dateTime)
+         console.log(dateTime)
         // console.log('+++++++++++',price)
         // console.log("---------price------- :",myCache.get("price"+userId))
         input(reply_token,typeService,bandAir,generationAir,airBTU,discriptionService,nameCustomer,addressCustomer,lat_lon,dateTime,price)  
