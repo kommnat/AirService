@@ -5,13 +5,58 @@ const cst = require('../utils/constants')
 
 
 
-const data_server = (typeService,) => {
+const data_server = (typeService,bandAir,generationAir,airBTU,discriptionService,nameCustomer,addressCustomer,lat_lon,dateTime,price) => {
     //bandAir,generationAir,airBTU,discriptionService,nameCustomer,addressCustomer,lat_lon,dateTime,price
-    let val = [
+    let  typeService = [
         [
             typeService
         ]   
       ];  
+    let  bandAir = [
+        [
+            bandAir
+        ]   
+      ];  
+    let  generationAir = [
+        [
+            generationAir
+        ]   
+      ]; 
+    let  airBTU = [
+        [
+            airBTU
+        ]   
+      ]; 
+    let  discriptionService = [
+        [
+            discriptionService
+        ]   
+      ];   
+    let  nameCustomer = [
+        [
+            nameCustomer
+        ]   
+      ];   
+    let  addressCustomer = [
+        [
+            addressCustomer
+        ]   
+      ];   
+    let  lat_lon = [
+        [
+            lat_lon
+        ]   
+      ];   
+    let  dateTime = [
+        [
+            dateTime
+        ]   
+      ];   
+    let  price = [
+        [
+            price
+        ]   
+      ];   
     const client = new google.auth.JWT(
         keys.client_email,
         null,
@@ -27,14 +72,14 @@ const data_server = (typeService,) => {
             return;
         }else{
             console.log('Connected!');
-            gsrun(client,val)
+            gsrun(client,typeService,bandAir,generationAir,airBTU,discriptionService,nameCustomer,addressCustomer,lat_lon,dateTime,price)
         }
     });
     
 }
 
-async function gsrun(cl,val){
-   console.log(val)
+async function gsrun(cl,typeService,bandAir,generationAir,airBTU,discriptionService,nameCustomer,addressCustomer,lat_lon,dateTime,price){
+   
     const gsapi = google.sheets({version:'v4',auth:cl })
 
     const opt = {
@@ -43,41 +88,89 @@ async function gsrun(cl,val){
     };
 
     let data = await gsapi.spreadsheets.values.get(opt);
-    console.log(data.data.values.length)
+    //console.log(data.data.values.length)
     var countData = data.data.values.length + 2
-
-    
-    let val1 = [
-        [
-            "Mitsubishi Electric"
-        ],
-        [
-            "Daikin"
-        ],
-        [
-            "Panasonic"
-        ],
-        // Additional rows ...
-      ];
    
     const updateOptions = {
         spreadsheetId: cst.spreadsheetId ,
         range: 'B'+countData,
         valueInputOption: 'USER_ENTERED',
-        resource: {values:val}
+        resource: {values:typeService}
     };
     gsapi.spreadsheets.values.update(updateOptions);
 
-    // const updateOptions1 = {
-    //     spreadsheetId: cst.spreadsheetId ,
-    //     range: 'C'+countData,
-    //     valueInputOption: 'USER_ENTERED',
-    //     resource: {values:val1}
-    // };
-    // gsapi.spreadsheets.values.update(updateOptions1);
+    const updateOptions1 = {
+        spreadsheetId: cst.spreadsheetId ,
+        range: 'C'+countData,
+        valueInputOption: 'USER_ENTERED',
+        resource: {values:bandAir}
+    };
+    gsapi.spreadsheets.values.update(updateOptions1);
     
-    
-    //console.log(res)
+    const updateOptions1 = {
+        spreadsheetId: cst.spreadsheetId ,
+        range: 'D'+countData,
+        valueInputOption: 'USER_ENTERED',
+        resource: {values:generationAir}
+    };
+    gsapi.spreadsheets.values.update(updateOptions1);
+
+    const updateOptions1 = {
+        spreadsheetId: cst.spreadsheetId ,
+        range: 'E'+countData,
+        valueInputOption: 'USER_ENTERED',
+        resource: {values:airBTU}
+    };
+    gsapi.spreadsheets.values.update(updateOptions1);
+
+    const updateOptions1 = {
+        spreadsheetId: cst.spreadsheetId ,
+        range: 'F'+countData,
+        valueInputOption: 'USER_ENTERED',
+        resource: {values:discriptionService}
+    };
+    gsapi.spreadsheets.values.update(updateOptions1);
+
+    const updateOptions1 = {
+        spreadsheetId: cst.spreadsheetId ,
+        range: 'G'+countData,
+        valueInputOption: 'USER_ENTERED',
+        resource: {values:nameCustomer}
+    };
+    gsapi.spreadsheets.values.update(updateOptions1);
+
+    const updateOptions1 = {
+        spreadsheetId: cst.spreadsheetId ,
+        range: 'H'+countData,
+        valueInputOption: 'USER_ENTERED',
+        resource: {values:addressCustomer}
+    };
+    gsapi.spreadsheets.values.update(updateOptions1);
+
+    const updateOptions1 = {
+        spreadsheetId: cst.spreadsheetId ,
+        range: 'I'+countData,
+        valueInputOption: 'USER_ENTERED',
+        resource: {values:lat_lon}
+    };
+    gsapi.spreadsheets.values.update(updateOptions1);
+
+    const updateOptions1 = {
+        spreadsheetId: cst.spreadsheetId ,
+        range: 'J'+countData,
+        valueInputOption: 'USER_ENTERED',
+        resource: {values:dateTime}
+    };
+    gsapi.spreadsheets.values.update(updateOptions1);
+
+    const updateOptions1 = {
+        spreadsheetId: cst.spreadsheetId ,
+        range: 'K'+countData,
+        valueInputOption: 'USER_ENTERED',
+        resource: {values:price}
+    };
+    gsapi.spreadsheets.values.update(updateOptions1);
+   
 
 }
 
