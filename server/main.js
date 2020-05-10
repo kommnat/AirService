@@ -27,7 +27,7 @@ const data_server = (typeService,) => {
             return;
         }else{
             console.log('Connected!');
-            gsrun(client,data_server.val)
+            gsrun(client,val)
         }
     });
     
