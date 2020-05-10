@@ -31,7 +31,22 @@ function cancle(reply_token,)   {
     let body = JSON.stringify({
         replyToken: reply_token,
         messages: [
-            
+            {
+                "type": "text",
+                "text": "ยกเลิกบันทึกข้อมูลสำเร็จ",
+                "quickReply": { 
+                    "items": [
+                      {
+                          "type": "action",
+                          "action": {
+                           "type":"message",
+                           "label":"ลงทะเบียน",
+                           "text": "ลงทะเบียน"
+                          }
+                      }
+                    ]
+                  }
+            }
         ]
     })
     request.post({

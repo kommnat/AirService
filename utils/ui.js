@@ -1,7 +1,7 @@
 module.exports = {
     flex_select_type: {
         "type": "flex",
-        "altText": "Flex Message",
+        "altText": "กรุณาเลือกประเภทเซอร์วิส",
         "contents": {
           "type": "bubble",
           "direction": "ltr",
@@ -63,7 +63,7 @@ module.exports = {
 
       flex_select_brand_air : {
         "type": "flex",
-        "altText": "Flex Message",
+        "altText": "กรุณาเลือกยี่ห้อแอร์",
         "contents": {
           "type": "bubble",
           "direction": "ltr",
@@ -232,7 +232,7 @@ module.exports = {
       },
       flex_select_btu : {
         "type": "flex",
-        "altText": "Flex Message",
+        "altText": "กรุณาเลือก BTU",
         "contents": {
           "type": "bubble",
           "direction": "ltr",
