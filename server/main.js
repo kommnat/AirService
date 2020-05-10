@@ -84,12 +84,12 @@ async function gsrun(cl,typeService,bandAir,generationAir,airBTU,discriptionServ
 
     const opt = {
         spreadsheetId: cst.spreadsheetId ,
-        range: 'A2:J101'
+        range: 'B1:J101'
     };
 
     let data = await gsapi.spreadsheets.values.get(opt);
     //console.log(data.data.values.length)
-    var countData = data.data.values.length + 2
+    var countData = data.data.values.length + 1
    
     const update_typeService = {
         spreadsheetId: cst.spreadsheetId ,
