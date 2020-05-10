@@ -79,7 +79,16 @@ const data_server = (type,band,generation,BTU,discription,name,address,latlon,da
 }
 
 async function gsrun(cl,typeService,bandAir,generationAir,airBTU,discriptionService,nameCustomer,addressCustomer,lat_lon,dateTime,price){
-   
+    console.log(typeService)
+    console.log(bandAir)
+    console.log(generationAir)
+    console.log(airBTU)
+    console.log(discriptionService)
+    console.log(nameCustomer)
+    console.log(addressCustomer)
+    console.log(lat_lon)
+    console.log(dateTime)
+    console.log(price)
     const gsapi = google.sheets({version:'v4',auth:cl })
 
     const opt = {
