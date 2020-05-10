@@ -5,43 +5,36 @@ const cst = require('../utils/constants')
 
 
 
-let data_server = (typeService,bandAir,generationAir,airBTU,discriptionService,nameCustomer,addressCustomer,lat_lon,dateTime,price) => {
+const data_server = (typeService,) => {
+    //bandAir,generationAir,airBTU,discriptionService,nameCustomer,addressCustomer,lat_lon,dateTime,price
     let val = [
         [
             "ซ่อม"
-        ],
-        [
-            "ติดตั้ง"
-        ],
-        [
-            "ล้าง"
-        ],
-        // Additional rows ...
-      ]; 
-      
-    }
-
+        ]   
+      ];  
     const client = new google.auth.JWT(
         keys.client_email,
         null,
         keys.private_key,
-        [cst.url_spreadsheets]
+        [cst.url_spreadsheets],
+        
     );
-
+    
     client.authorize(function(err,tokens){
-
+        
         if(err){
             console.log(err);
             return;
         }else{
             console.log('Connected!');
-            gsrun(client)
+            gsrun(client,data_server.val)
         }
     });
+    
+}
 
-
-async function gsrun(cl){
-   
+async function gsrun(cl,val){
+   console.log(val)
     const gsapi = google.sheets({version:'v4',auth:cl })
 
     const opt = {
@@ -51,7 +44,7 @@ async function gsrun(cl){
 
     let data = await gsapi.spreadsheets.values.get(opt);
     console.log(data.data.values.length)
-    var countData = data.data.values.length + 1
+    var countData = data.data.values.length + 2
 
     
     let val1 = [
@@ -71,7 +64,7 @@ async function gsrun(cl){
         spreadsheetId: cst.spreadsheetId ,
         range: 'B'+countData,
         valueInputOption: 'USER_ENTERED',
-        resource: {values:val1}
+        resource: {values:val}
     };
     gsapi.spreadsheets.values.update(updateOptions);
 

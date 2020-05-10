@@ -3,6 +3,7 @@ const cst = require('../../utils/constants')
 const ui = require('../../utils/ui')
 const {google} = require('googleapis');
 const keys = require('../../utils/keys.json')
+const sv = require('../../server/main')
 //--------------------------------------------------
 const request = require('request')
 var moment = require('moment')
@@ -23,74 +24,8 @@ let save_data = (reply_token,userId,myCache) => {
         let price = myCache.get("price"+userId)
         // console.log("type_service :",type_service)
         // console.log("price :",price)
-       //save(reply_token,)  
-
-       const client = new google.auth.JWT(
-        keys.client_email,
-        null,
-        keys.private_key,
-        [cst.url_spreadsheets]
-        );
-    
-        client.authorize(function(err,tokens){
-    
-        if(err){
-            console.log(err);
-            return;
-        }else{
-            console.log('Connected!');
-            gsrun(client,typeService)
-        }
-        });
-     
-}
-
-
-async function gsrun(cl,typeService){
-   
-    const gsapi = google.sheets({version:'v4',auth:cl })
-
-    const opt = {
-        spreadsheetId: cst.spreadsheetId ,
-        range: 'B2:J101'
-    };
-
-    let data = await gsapi.spreadsheets.values.get(opt);
-    console.log(data.data.values.length)
-    var countData = data.data.values.length + 1
-
-    
-    let val1 = [
-        [
-            "Mitsubishi Electric"
-        ],
-        [
-            "Daikin"
-        ],
-        [
-            "Panasonic"
-        ],
-        // Additional rows ...
-      ];
-   
-    const updateOptions = {
-        spreadsheetId: cst.spreadsheetId ,
-        range: 'B'+countData,
-        valueInputOption: 'USER_ENTERED',
-        resource: {values:typeService}
-    };
-    gsapi.spreadsheets.values.update(updateOptions);
-
-    // const updateOptions1 = {
-    //     spreadsheetId: cst.spreadsheetId ,
-    //     range: 'C'+countData,
-    //     valueInputOption: 'USER_ENTERED',
-    //     resource: {values:val1}
-    // };
-    // gsapi.spreadsheets.values.update(updateOptions1);
-    
-    
-    //console.log(res)
+       save(reply_token,)
+       sv.data_server(typeService)  
 
 }
 
@@ -103,7 +38,10 @@ function save(reply_token,)   {
     let body = JSON.stringify({
         replyToken: reply_token,
         messages: [
-            
+            {
+                "type": "text",
+                "text": "บันทึกข้อมูลสำเร็จ"
+            }
         ]
     })
     request.post({
