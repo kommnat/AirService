@@ -66,9 +66,7 @@ function input(reply_token,typeService,bandAir,generationAir,airBTU,discriptionS
                       //ล้าง https://sv1.picz.in.th/images/2020/05/10/UVFPbW.png
                       {
                         "type": "image",
-                        "url": typeService == 'ติดตั้งแอร์'?('https://sv1.picz.in.th/images/2020/05/10/UVFget.png'):('https://sv1.picz.in.th/images/2020/05/10/UVFget.png') ||
-                        typeService == 'ซ่อมแอร์'?('https://sv1.picz.in.th/images/2020/05/10/UVFbWV.png'):('https://sv1.picz.in.th/images/2020/05/10/UVFbWV.png') ||
-                        typeService == 'ล้างแอร์'?('https://sv1.picz.in.th/images/2020/05/10/UVFPbW.png'):('https://sv1.picz.in.th/images/2020/05/10/UVFPbW.png')  ,
+                        "url": typeService == 'ติดตั้งแอร์'?('https://sv1.picz.in.th/images/2020/05/10/UVFget.png'):(typeService == 'ซ่อมแอร์'?('https://sv1.picz.in.th/images/2020/05/10/UVFbWV.png'):(typeService == 'ล้างแอร์'?('https://sv1.picz.in.th/images/2020/05/10/UVFPbW.png'):(''))) ,
                         "align": "center",
                         "gravity": "center",
                         "size": "full"
