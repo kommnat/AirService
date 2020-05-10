@@ -33,7 +33,7 @@ function cancle(reply_token,)   {
         messages: [
             {
                 "type": "text",
-                "text": "ยกเลิกบันทึกข้อมูลสำเร็จ",
+                "text": "ยกเลิกบันทึกข้อมูลสำเร็จ หากต้องการลงทะเบียนใหม่\nกดลงทะเบียนได้เลย",
                 "quickReply": { 
                     "items": [
                       {

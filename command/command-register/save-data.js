@@ -40,7 +40,7 @@ function save(reply_token,)   {
         messages: [
             {
                 "type": "text",
-                "text": "บันทึกข้อมูลสำเร็จ",
+                "text": "บันทึกข้อมูลสำเร็จ หากต้องการลงทะเบียนเพิ่ม\nกดลงทะเบียนได้เลย",
                 "quickReply": { 
                     "items": [
                       {

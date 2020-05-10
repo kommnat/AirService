@@ -18,7 +18,19 @@ function greet(msg, reply_token ,) {
         replyToken: reply_token,
         messages: [{
             'type': 'text',
-            'text': msg
+            'text': msg +" คุณพิมลพัชร์ \nวันนี้มีลงทะเบียนเพิ่มใหม่ครับ",
+            "quickReply": { 
+                "items": [
+                  {
+                      "type": "action",
+                      "action": {
+                       "type":"message",
+                       "label":"ลงทะเบียน",
+                       "text": "ลงทะเบียน"
+                      }
+                  }
+                ]
+              }
         },
     ]
     })

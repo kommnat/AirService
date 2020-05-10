@@ -67,6 +67,8 @@ app.post('/kreangsak',async (req, res) => {
 
                 }else if((event.message.text) == 'ยกเลิก'  && myCache.get("type_service"+userId) != null && myCache.get("select_band"+userId) != null && myCache.get("generation"+userId) != null && myCache.get("select_btu"+userId) != null && myCache.get("discription"+userId) != null && myCache.get("name_customer"+userId) != null && myCache.get("address"+userId) != null && myCache.get("lat_lon"+userId) != null && myCache.get("price"+userId) != null ){
                     cancle_data(reply_token,userId,myCache)
+                }else{
+                    hello("สวัสดีครับ ",reply_token)
                 }
             }else if(event.message.type == 'location' ){
                 //console.log('---------location-------')
