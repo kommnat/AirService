@@ -84,7 +84,7 @@ async function gsrun(cl,typeService,bandAir,generationAir,airBTU,discriptionServ
 
     const opt = {
         spreadsheetId: cst.spreadsheetId ,
-        range: 'B2:J101'
+        range: 'A2:J101'
     };
 
     let data = await gsapi.spreadsheets.values.get(opt);
