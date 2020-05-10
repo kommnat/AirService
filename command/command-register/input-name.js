@@ -22,10 +22,6 @@ function input( reply_token) {
     let body = JSON.stringify({
         replyToken: reply_token,
         messages: [
-            // {
-            //     'type': 'text',
-            //     'text': 'เลือกตำแหน่งของเจ้าแอร์ด้วยครับ'
-            // }
             {
                 "type": "text", 
                 "text": "เลือกตำแหน่งของเจ้าแอร์ด้วยครับ",
@@ -37,10 +33,10 @@ function input( reply_token) {
                          "type":"location",
                          "label":"เลือกตำแหน่ง"
                         }
-                       }
+                    }
                   ]
                 }
-              }
+            }
     ]
     })
     request.post({

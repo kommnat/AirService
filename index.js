@@ -16,6 +16,7 @@ const c_selectBTU = require('./command/command-register/select-btu')
 const c_inputDiscription = require('./command/command-register/input-discription')
 const c_inputNameCustomer = require('./command/command-register/input-name-customer')
 const c_inputName = require('./command/command-register/input-name')
+const c_saveLocation = require('./command/command-register/save-location')
 
 app.get('/kreangsak', (req, res) => {
     res.send('Hello GET')
@@ -59,9 +60,9 @@ app.post('/kreangsak',async (req, res) => {
                 if(myCache.get("type_service"+userId) != null && myCache.get("select_band"+userId) != null && myCache.get("generation"+userId) != null && myCache.get("select_btu"+userId) != null && myCache.get("discription"+userId) != null && myCache.get("name_customer"+userId) != null ){
                     let address = (event.message.address);
                     let lat_lon = event.message.latitude+','+event.message.longitude
-                    console.log(address)
-                    console.log(lat_lon)
-                    //save_location(address,lat_lon,reply_token,userId,myCache)
+                    // console.log(address)
+                    // console.log(lat_lon)
+                    save_location(address,lat_lon,reply_token,userId,myCache)
                 }
             }
         }else if(event.type == 'postback' ){
@@ -125,4 +126,8 @@ const input_name_customer = (msg,reply_token,userId,myCache) => {
 
 const input_name = (msg,reply_token,userId,myCache) => {
     c_inputName.input_name(msg,reply_token,userId,myCache)
+}
+
+const save_location = (address,lat_lon,reply_token,userId,myCache) => {
+    c_saveLocation.save_location(address,lat_lon,reply_token,userId,myCache)
 }
