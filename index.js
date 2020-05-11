@@ -20,6 +20,7 @@ const c_saveLocation = require('./command/command-register/save-location')
 const c_inputPrice = require('./command/command-register/input-price')
 const c_saveData = require('./command/command-register/save-data')
 const c_cancleData = require('./command/command-register/cancle-data')
+const c_writeImage = require('./resource/write-image')
 
 app.get('/kreangsak', (req, res) => {
     res.send('Hello GET')
@@ -77,6 +78,10 @@ app.post('/kreangsak',async (req, res) => {
                     // console.log(lat_lon)
                     save_location(address,lat_lon,reply_token,userId,myCache)
                 }
+            }else if(event.message.type == 'image' ){
+                    let id_image = event.message.id
+                    console.log(id_image)
+                    image(id_image,reply_token,userId,myCache)
             }
         }else if(event.type == 'postback' ){
             //console.log('body : ',req.body.events[0])
@@ -157,4 +162,8 @@ const save_data = (reply_token,userId,myCache) =>{
 
 const cancle_data = (reply_token,userId,myCache) =>{
     c_cancleData.cancle_data(reply_token,userId,myCache)
+}
+
+const image = (id_image,reply_token,userId,myCache) =>{
+    c_writeImage.image(id_image,reply_token,userId,myCache)
 }
