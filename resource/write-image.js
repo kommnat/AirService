@@ -18,7 +18,8 @@ const image = (id_image,reply_token,userId,myCache) =>{
 
         //var base64data = Buffer.from(body, 'binary').toString('base64');
         console.log("image :",body)
-        fs.writeFile("o1.jpeg", body, "binary", function (err) {
+        var wstream = fs.createWriteStream('myOutput.txt');
+        wstream.write(body, "binary", function (err) {
         console.log(err); // writes out file without error, but it's not a valid image
     });
     })
