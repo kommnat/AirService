@@ -18,12 +18,12 @@ const image = (id_image,reply_token,userId,myCache) =>{
 
         //var base64data = Buffer.from(body, 'binary').toString('base64');
         console.log("image :",body)
-        let buff = new Buffer(body, 'base64');
-        fs.writeFileSync('stack-abuse-logo-out.jpeg', buff);
+        // let buff = new Buffer(body, 'base64');
+        // fs.writeFileSync('stack-abuse-logo-out.jpeg', buff);
         //var wstream = fs.createWriteStream('myOutput.txt');
-    //    fs.writeFile('myOutput.txt',body, "binary", function (err) {
-    //     console.log(err); // writes out file without error, but it's not a valid image
-    //   });
+       fs.writeFile('myOutput.txt',body, "binary", function (err) {
+        console.log(err); // writes out file without error, but it's not a valid image
+      });
     })
 
 }
