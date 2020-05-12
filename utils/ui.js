@@ -98,6 +98,18 @@ module.exports = {
                 "type": "button",
                 "action": {
                   "type": "postback",
+                  "label": "Mitsubishi Heavy Duty",
+                  "text": "เลือก Mitsubishi Heavy Duty",
+                  "data": "select_bandMitsubishi Heavy Duty"
+                },
+                "color": "#E9193E",
+                "margin": "sm",
+                "style": "primary"
+              },
+              {
+                "type": "button",
+                "action": {
+                  "type": "postback",
                   "label": "Daikin",
                   "text": "เลือก Daikin",
                   "data": "select_bandDaikin"
