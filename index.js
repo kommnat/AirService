@@ -60,7 +60,7 @@ app.post('/kreangsak',async (req, res) => {
                     let msg = (event.message.text).trim();
                     input_name(msg,reply_token,userId,myCache)
                 
-                }else if((event.message.text).substring(0, 5) != 'เลือก'  && myCache.get("type_service"+userId) != null && myCache.get("select_band"+userId) != null && myCache.get("generation"+userId) != null && myCache.get("select_btu"+userId) != null && myCache.get("discription"+userId) != null && myCache.get("input_name_customer"+userId) != null && myCache.get("input_tel"+userId) != null){
+                }else if((event.message.text).substring(0, 5) != 'เลือก'  && myCache.get("type_service"+userId) != null && myCache.get("select_band"+userId) != null && myCache.get("generation"+userId) != null && myCache.get("select_btu"+userId) != null && myCache.get("discription"+userId) != null  && myCache.get("input_tel"+userId) != null){
                     console.log("input_tel_customer index")
                     let msg = (event.message.text).trim();
                     input_tel_customer(msg,reply_token,userId,myCache)
