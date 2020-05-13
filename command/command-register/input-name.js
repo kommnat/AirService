@@ -25,7 +25,7 @@ function input( reply_token,msg) {
         messages: [
             {
                 "type": "text", 
-                "text": "กรอกเบอร์ของ "+msg+" ด้วยครับ"
+                "text": "กรอกเบอร์ของคุณ "+msg+" ด้วยครับ"
                 
             }
     ]
