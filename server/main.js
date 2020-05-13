@@ -77,13 +77,13 @@ const data_server = (type,band,generation,BTU,discription,name,tel,address,latlo
             return;
         }else{
             console.log('Connected!');
-            gsrun(client,typeService,bandAir,generationAir,airBTU,discriptionService,nameCustomer,addressCustomer,lat_lon,dateTime,price)
+            gsrun(client,typeService,bandAir,generationAir,airBTU,discriptionService,nameCustomer,telCustomer,addressCustomer,lat_lon,dateTime,price)
         }
     });
     
 }
 
-async function gsrun(cl,typeService,bandAir,generationAir,airBTU,discriptionService,nameCustomer,addressCustomer,lat_lon,dateTime,price){
+async function gsrun(cl,typeService,bandAir,generationAir,airBTU,discriptionService,nameCustomer,telCustomer,addressCustomer,lat_lon,dateTime,price){
     // console.log(typeService)
     // console.log(bandAir)
     // console.log(generationAir)
