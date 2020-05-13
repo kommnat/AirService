@@ -18,6 +18,7 @@ let save_data = (reply_token,userId,myCache) => {
         let airBTU = myCache.get("select_btu"+userId)
         let discriptionService = myCache.get("discription"+userId)
         let nameCustomer = myCache.get("name_customer"+userId)
+        let telCustomer = myCache.get("tel_customer"+userId)
         let addressCustomer = myCache.get("address"+userId)
         let lat_lon = myCache.get("lat_lon"+userId)
         let dateTime = moment().add(7, 'hours').format('YYYY-MM-D HH:MM')
@@ -25,7 +26,7 @@ let save_data = (reply_token,userId,myCache) => {
         // console.log("type_service :",type_service)
         //console.log("---------price------- :",price)
        save(reply_token,)
-       sv.data_server(typeService,bandAir,generationAir,airBTU,discriptionService,nameCustomer,addressCustomer,lat_lon,dateTime,price)
+       sv.data_server(typeService,bandAir,generationAir,airBTU,discriptionService,nameCustomer,telCustomer,addressCustomer,lat_lon,dateTime,price,)
 
 }
 

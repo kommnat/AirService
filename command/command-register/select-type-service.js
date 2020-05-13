@@ -16,6 +16,7 @@ let select_type_service = (msg,reply_token,userId,myCache) => {
     myCache.del("discription"+userId)
     myCache.del("input_name_customer"+userId)
     myCache.del("name_customer"+userId)
+    myCache.del("tel_customer"+userId)
     myCache.del("address"+userId)
     myCache.del("lat_lon"+userId)
     myCache.del("price"+userId) 

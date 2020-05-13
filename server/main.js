@@ -5,7 +5,7 @@ const cst = require('../utils/constants')
 
 
 
-const data_server = (type,band,generation,BTU,discription,name,address,latlon,date,pri) => {
+const data_server = (type,band,generation,BTU,discription,name,tel,address,latlon,date,pri) => {
     //bandAir,generationAir,airBTU,discriptionService,nameCustomer,addressCustomer,lat_lon,dateTime,price
     let  typeService = [
         [
@@ -37,6 +37,11 @@ const data_server = (type,band,generation,BTU,discription,name,address,latlon,da
             name
         ]   
       ];   
+    let  telCustomer = [
+        [
+            tel
+        ]   
+      ];  
     let  addressCustomer = [
         [
             address
@@ -93,7 +98,7 @@ async function gsrun(cl,typeService,bandAir,generationAir,airBTU,discriptionServ
 
     const opt = {
         spreadsheetId: cst.spreadsheetId ,
-        range: 'B1:K101'
+        range: 'B1:L101'
     };
 
     let data = await gsapi.spreadsheets.values.get(opt);
@@ -148,9 +153,18 @@ async function gsrun(cl,typeService,bandAir,generationAir,airBTU,discriptionServ
     };
     gsapi.spreadsheets.values.update(update_nameCustomer);
 
-    const update_addressCustomer = {
+    const update_telCustomer = {
         spreadsheetId: cst.spreadsheetId ,
         range: 'H'+countData,
+        valueInputOption: 'USER_ENTERED',
+        resource: {values:telCustomer}
+    };
+    gsapi.spreadsheets.values.update(update_telCustomer);
+
+
+    const update_addressCustomer = {
+        spreadsheetId: cst.spreadsheetId ,
+        range: 'I'+countData,
         valueInputOption: 'USER_ENTERED',
         resource: {values:addressCustomer}
     };
@@ -158,7 +172,7 @@ async function gsrun(cl,typeService,bandAir,generationAir,airBTU,discriptionServ
 
     const update_lat_lon = {
         spreadsheetId: cst.spreadsheetId ,
-        range: 'I'+countData,
+        range: 'J'+countData,
         valueInputOption: 'USER_ENTERED',
         resource: {values:lat_lon}
     };
@@ -166,7 +180,7 @@ async function gsrun(cl,typeService,bandAir,generationAir,airBTU,discriptionServ
 
     const update_dateTime = {
         spreadsheetId: cst.spreadsheetId ,
-        range: 'J'+countData,
+        range: 'K'+countData,
         valueInputOption: 'USER_ENTERED',
         resource: {values:dateTime}
     };
@@ -174,7 +188,7 @@ async function gsrun(cl,typeService,bandAir,generationAir,airBTU,discriptionServ
 
     const update_price = {
         spreadsheetId: cst.spreadsheetId ,
-        range: 'K'+countData,
+        range: 'L'+countData,
         valueInputOption: 'USER_ENTERED',
         resource: {values:price}
     };

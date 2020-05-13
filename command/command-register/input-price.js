@@ -15,6 +15,7 @@ let input_price = (price,reply_token,userId,myCache) => {
         let airBTU = myCache.get("select_btu"+userId)
         let discriptionService = myCache.get("discription"+userId)
         let nameCustomer = myCache.get("name_customer"+userId)
+        let telCustomer = myCache.get("tel_customer"+userId)
         let addressCustomer = myCache.get("address"+userId)
         let lat_lon = myCache.get("lat_lon"+userId)
         let dateTime = moment().add(7, 'hours').format('YYYY-MM-D HH:MM')
@@ -28,14 +29,14 @@ let input_price = (price,reply_token,userId,myCache) => {
         // console.log(nameCustomer)
         // console.log(addressCustomer)
         // console.log(lat_lon)
-         console.log(dateTime)
+         //console.log(dateTime)
         // console.log('+++++++++++',price)
         // console.log("---------price------- :",myCache.get("price"+userId))
-        input(reply_token,typeService,bandAir,generationAir,airBTU,discriptionService,nameCustomer,addressCustomer,lat_lon,dateTime,price)  
+        input(reply_token,typeService,bandAir,generationAir,airBTU,discriptionService,nameCustomer,telCustomer,addressCustomer,lat_lon,dateTime,price)  
        
 }
 
-function input(reply_token,typeService,bandAir,generationAir,airBTU,discriptionService,nameCustomer,addressCustomer,lat_lon,dateTime,price)   {
+function input(reply_token,typeService,bandAir,generationAir,airBTU,discriptionService,nameCustomer,telCustomer,addressCustomer,lat_lon,dateTime,price)   {
     
     let headers = {
         'Content-Type': 'application/json',
@@ -201,6 +202,29 @@ function input(reply_token,typeService,bandAir,generationAir,airBTU,discriptionS
                           {
                             "type": "text",
                             "text": nameCustomer,
+                            "flex": 2,
+                            "align": "start",
+                            "gravity": "center",
+                            "wrap": true
+                          }
+                        ]
+                      },
+                      {
+                        "type": "box",
+                        "layout": "horizontal",
+                        "margin": "sm",
+                        "contents": [
+                          {
+                            "type": "text",
+                            "text": "เบอร์โทร :",
+                            "size": "lg",
+                            "align": "start",
+                            "gravity": "center",
+                            "weight": "bold"
+                          },
+                          {
+                            "type": "text",
+                            "text": telCustomer,
                             "flex": 2,
                             "align": "start",
                             "gravity": "center",

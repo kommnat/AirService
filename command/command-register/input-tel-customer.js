@@ -7,7 +7,7 @@ const request = require('request')
 
 let input_tel_customer = (msg,reply_token,userId,myCache) => {
     
-        myCache.set("input_tel_customer"+userId,msg,300000);
+        myCache.set("tel_customer"+userId,msg,300000);
         //console.log("name_customer :",msg)
         input(reply_token)  
         myCache.del("input_tel"+userId)
