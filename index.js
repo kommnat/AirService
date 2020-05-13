@@ -21,6 +21,7 @@ const c_inputPrice = require('./command/command-register/input-price')
 const c_saveData = require('./command/command-register/save-data')
 const c_cancleData = require('./command/command-register/cancle-data')
 const c_writeImage = require('./resource/write-image')
+const c_inputTelCustomer = require('./command/command-register/input-tel-customer')
 
 app.get('/kreangsak', (req, res) => {
     res.send('Hello GET')
@@ -58,12 +59,16 @@ app.post('/kreangsak',async (req, res) => {
                 }else if((event.message.text).substring(0, 5) != 'เลือก'  && myCache.get("type_service"+userId) != null && myCache.get("select_band"+userId) != null && myCache.get("generation"+userId) != null && myCache.get("select_btu"+userId) != null && myCache.get("discription"+userId) != null && myCache.get("input_name_customer"+userId) != null ){
                     let msg = (event.message.text).trim();
                     input_name(msg,reply_token,userId,myCache)
+                
+                }else if((event.message.text).substring(0, 5) != 'เลือก'  && myCache.get("type_service"+userId) != null && myCache.get("select_band"+userId) != null && myCache.get("generation"+userId) != null && myCache.get("select_btu"+userId) != null && myCache.get("discription"+userId) != null && myCache.get("input_name_customer"+userId) != null && myCache.get("input_tel"+userId) != null){
+                    let msg = (event.message.text).trim();
+                    input_tel_customer(msg,reply_token,userId,myCache)
 
                 }else if((event.message.text).substring(0, 5) != 'เลือก' && (event.message.text) != 'บันทึก' && (event.message.text) != 'ยกเลิก' && myCache.get("type_service"+userId) != null && myCache.get("select_band"+userId) != null && myCache.get("generation"+userId) != null && myCache.get("select_btu"+userId) != null && myCache.get("discription"+userId) != null && myCache.get("address"+userId) != null && myCache.get("lat_lon"+userId) != null ){
                     let price = (event.message.text).trim();
                     input_price(price,reply_token,userId,myCache)
 
-                }else if((event.message.text) == 'บันทึก'  && myCache.get("type_service"+userId) != null && myCache.get("select_band"+userId) != null && myCache.get("generation"+userId) != null && myCache.get("select_btu"+userId) != null && myCache.get("discription"+userId) != null && myCache.get("name_customer"+userId) != null && myCache.get("address"+userId) != null && myCache.get("lat_lon"+userId) != null && myCache.get("price"+userId) != null ){
+                }else if((event.message.text) == 'บันทึก'  && myCache.get("type_service"+userId) != null && myCache.get("select_band"+userId) != null && myCache.get("generation"+userId) != null && myCache.get("select_btu"+userId) != null && myCache.get("discription"+userId) != null && myCache.get("name_customer"+userId) != null && myCache.get("input_tel_customer"+userId) != null && myCache.get("address"+userId) != null && myCache.get("lat_lon"+userId) != null && myCache.get("price"+userId) != null ){
                     save_data(reply_token,userId,myCache)
 
                 }else if((event.message.text) == 'ยกเลิก'  && myCache.get("type_service"+userId) != null && myCache.get("select_band"+userId) != null && myCache.get("generation"+userId) != null && myCache.get("select_btu"+userId) != null && myCache.get("discription"+userId) != null && myCache.get("name_customer"+userId) != null && myCache.get("address"+userId) != null && myCache.get("lat_lon"+userId) != null && myCache.get("price"+userId) != null ){
@@ -71,7 +76,7 @@ app.post('/kreangsak',async (req, res) => {
                 }
             }else if(event.message.type == 'location' ){
                 //console.log('---------location-------')
-                if(myCache.get("type_service"+userId) != null && myCache.get("select_band"+userId) != null && myCache.get("generation"+userId) != null && myCache.get("select_btu"+userId) != null && myCache.get("discription"+userId) != null && myCache.get("name_customer"+userId) != null ){
+                if(myCache.get("type_service"+userId) != null && myCache.get("select_band"+userId) != null && myCache.get("generation"+userId) != null && myCache.get("select_btu"+userId) != null && myCache.get("discription"+userId) != null && myCache.get("name_customer"+userId) != null && myCache.get("input_tel_customer"+userId) != null  ){
                     let address = (event.message.address);
                     let lat_lon = event.message.latitude+','+event.message.longitude
                     // console.log(address)
@@ -166,4 +171,8 @@ const cancle_data = (reply_token,userId,myCache) =>{
 
 const image = (id_image,reply_token,userId,myCache) =>{
     c_writeImage.image(id_image,reply_token,userId,myCache)
+}
+
+const input_tel_customer = (msg,reply_token,userId,myCache) =>{
+    c_inputTelCustomer.input_tel_customer(msg,reply_token,userId,myCache)
 }

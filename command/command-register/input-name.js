@@ -8,12 +8,13 @@ const request = require('request')
 let input_name = (msg,reply_token,userId,myCache) => {
     
         myCache.set("name_customer"+userId,msg,300000);
+        myCache.set("input_tel"+userId,msg,300000);
         console.log("name_customer :",msg)
-        input(reply_token)  
+        input(reply_token,msg)  
         myCache.del("input_name_customer"+userId)
 }
 
-function input( reply_token) {
+function input( reply_token,msg) {
     
     let headers = {
         'Content-Type': 'application/json',
@@ -24,18 +25,8 @@ function input( reply_token) {
         messages: [
             {
                 "type": "text", 
-                "text": "เลือกตำแหน่งของเจ้าแอร์ด้วยครับ",
-                "quickReply": { 
-                  "items": [
-                    {
-                        "type": "action",
-                        "action": {
-                         "type":"location",
-                         "label":"เลือกตำแหน่ง"
-                        }
-                    }
-                  ]
-                }
+                "text": "กรอกเบอร์ของ "+msg+" ด้วยครับ"
+                
             }
     ]
     })
